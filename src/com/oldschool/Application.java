@@ -54,7 +54,8 @@ public class Application {
     private void writeBmp(String string) throws Exception {
         File file = new File(sDir);
 
-        String fileName = file.getName();
+//        String fileName = file.getName();
+        String fileName = "output.bmp";
         int lastDot = fileName.lastIndexOf('.');
         String newFileName = fileName.substring(0, lastDot) + string + fileName.substring(lastDot);
 
