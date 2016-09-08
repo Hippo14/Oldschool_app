@@ -18,19 +18,13 @@ public class Sum extends Operation {
 
     @Override
     public void makeAlgorithm(int x, int y) {
-        int firstPixel = file.getImage().getValue(x, y);
+        int firstPixel = file.getImage().getRed(x, y);
+        int secondPixel = secondFile.getImage().getRed(x, y);
+        int sum = firstPixel + secondPixel;
 
-        if (x < file.getHeader().getWidth() && y < file.getHeader().getHeight()) {
-            int secondPixel = secondFile.getImage().getValue(x, y);
-            int sum = firstPixel + secondPixel;
-
-            file.getImage().setValue(sum, x, y);
-        }
-        else {
-            int secondPixel = 255;
-            int sum = firstPixel + secondPixel;
-            file.getImage().setValue(sum, x, y);
-        }
+        file.getImage().setRed(x, y, sum);
+        file.getImage().setGreen(x, y, sum);
+        file.getImage().setBlue(x, y, sum);
     }
 
 }

@@ -36,22 +36,13 @@ public class BmpImage {
             case Constants.BITS_1:
                 bit = new int[width][height];
             break;
-            case Constants.BITS_4:
             case Constants.BITS_8:
-            case Constants.BITS_4_GRAY:
-            case Constants.BITS_8_GRAY:
                 value = new int[width][height];
             break;
             case Constants.BITS_24:
                 red = new int[width][height];
                 green = new int[width][height];
                 blue = new int[width][height];
-            break;
-            case Constants.BITS_32:
-                red = new int[width][height];
-                green = new int[width][height];
-                blue = new int[width][height];
-                alpha = new int[width][height];
             break;
         }
     }
@@ -140,4 +131,27 @@ public class BmpImage {
         return pixels;
     }
 
+    public int[][] getReds() {
+        return red;
+    }
+
+    public int[][] getGreens() {
+        return green;
+    }
+
+    public int[][] getBlues() {
+        return blue;
+    }
+
+    public void setReds(int[][] reds) {
+        this.red = reds;
+    }
+
+    public void setGreens(int[][] greens) {
+        this.green = greens;
+    }
+
+    public void setBlues(int[][] blues) {
+        this.blue = blues;
+    }
 }

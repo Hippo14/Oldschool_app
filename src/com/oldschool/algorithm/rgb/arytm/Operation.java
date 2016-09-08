@@ -51,4 +51,7 @@ abstract public class Operation {
 
     public abstract void makeAlgorithm(int x, int y);
 
+    public BmpFile getFile() {
+        return file;
+    }
 }

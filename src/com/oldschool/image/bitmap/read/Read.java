@@ -77,10 +77,8 @@ public class Read {
     private BmpImage getPixels(Pixel[] pixels, LitEndInputStream input) throws IOException, UnknownFormatException {
         if (header.getCompressionType() == 0) {
             if (header.getBitsPerPixel() == Constants.BITS_1)       return Bits.BIT1.read(header, input, pixels);
-            else if (header.getBitsPerPixel() == Constants.BITS_4)  return Bits.BIT4.read(header, input, pixels);
             else if (header.getBitsPerPixel() == Constants.BITS_8)  return Bits.BIT8.read(header, input, pixels);
             else if (header.getBitsPerPixel() == Constants.BITS_24) return Bits.BIT24.read(header, input, pixels);
-            else if (header.getBitsPerPixel() == Constants.BITS_32) return Bits.BIT32.read(header, input, pixels);
         }
         throw new UnknownFormatException("Nieznany format bmp: bitCount= " + header.getBitsPerPixel() + ", compression= " + header.getCompressionType());
     }

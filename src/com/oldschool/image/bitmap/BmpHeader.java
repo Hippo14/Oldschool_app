@@ -35,7 +35,6 @@ public class BmpHeader {
     boolean rgb = false;
 
     int numColors;
-    private boolean RGB;
 
     public BmpHeader(LitEndInputStream input) throws IOException {
         readSignature(input);
@@ -183,7 +182,7 @@ public class BmpHeader {
     }
 
     public boolean getRGB() {
-        return RGB;
+        return rgb;
     }
 
     public void write(LitEndOutputStream input) throws IOException {
@@ -195,10 +194,6 @@ public class BmpHeader {
         input.writeInteger(width);
         input.writeInteger(height);
         input.writeShort(planes);
-
-        if (bitsPerPixel == Constants.BITS_4_GRAY) bitsPerPixel = Constants.BITS_4;
-        if (bitsPerPixel == Constants.BITS_8_GRAY) bitsPerPixel = Constants.BITS_8;
-
         input.writeShort(bitsPerPixel);
         input.writeInteger(compressionType);
         input.writeInteger(sizeOfImageDataInBytes);

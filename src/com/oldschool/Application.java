@@ -5,6 +5,7 @@ import com.oldschool.algorithm.binary.logical.Product;
 import com.oldschool.algorithm.binary.logical.Sum;
 import com.oldschool.algorithm.binary.logical.XOR;
 import com.oldschool.algorithm.grayscale.arytm.SumConst;
+import com.oldschool.algorithm.normalize.Normalize;
 import com.oldschool.image.bitmap.BmpFile;
 import com.oldschool.image.bitmap.exception.BadImageSizeException;
 import com.oldschool.image.bitmap.exception.BadImageTypeException;
@@ -42,11 +43,12 @@ public class Application {
         normalize();
 
         // Write Bmp file
-//        writeBmp("_normalize");
+        writeBmp("_normalize");
     }
 
     private void normalize() {
-
+        Normalize normalize = new Normalize(file);
+        file = normalize.getFile();
     }
 
     private void writeBmp(String string) throws Exception {
@@ -66,6 +68,7 @@ public class Application {
     private void chooseOption() throws Exception {
         System.out.println("....");
         System.out.println("Wybierz opcje:");
+        System.out.println("1. ");
 
         Scanner input= new Scanner(System.in);
 
@@ -90,9 +93,19 @@ public class Application {
             case 6:
                 graySumConst();
                 break;
+            case 7:
+                rgbSum();
+                break;
         }
 
 
+    }
+
+    private void rgbSum() throws BadImageSizeException, UnknownFormatException, BadImageTypeException, IOException {
+        BmpFile secondFile = getSecondBmpFile();
+
+        com.oldschool.algorithm.rgb.arytm.Sum sum = new com.oldschool.algorithm.rgb.arytm.Sum(file, secondFile);
+        file = sum.getFile();
     }
 
     private void graySumConst() throws IOException, BadImageTypeException {

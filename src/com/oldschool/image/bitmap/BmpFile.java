@@ -26,14 +26,4 @@ public class BmpFile {
         return image;
     }
 
-    public void setNewIndexColorModel(Pixel[] pixels) {
-        if (getHeader().getBitsPerPixel() == Constants.BITS_4) {
-            getHeader().setBitsPerPixel((short) Constants.BITS_4_GRAY);
-            getImage().setPixels(pixels);
-        }
-        else if (getHeader().getBitsPerPixel() == Constants.BITS_8) {
-            getHeader().setBitsPerPixel((short) Constants.BITS_8_GRAY);
-            getImage().setPixels(pixels);
-        }
-    }
 }

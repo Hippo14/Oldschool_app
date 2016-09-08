@@ -70,10 +70,8 @@ public class Write {
         if (header.getBitsPerPixel() <= Constants.BITS_8) writeColorMap(pixels, input);
 
         if (header.getBitsPerPixel() == Constants.BITS_1)       Bits.BIT1.write(file, input);
-        else if (header.getBitsPerPixel() == Constants.BITS_4)  Bits.BIT4.write(file, input);
         else if (header.getBitsPerPixel() == Constants.BITS_8)  Bits.BIT8.write(file, input);
         else if (header.getBitsPerPixel() == Constants.BITS_24) Bits.BIT24.write(file, input);
-        else if (header.getBitsPerPixel() == Constants.BITS_32) Bits.BIT32.write(file, input);
     }
 
 //    private void writeColorMap(IndexColorModel indexColorModel, LitEndOutputStream input) throws IOException {
@@ -136,10 +134,8 @@ public class Write {
         bytesPerLine = 0;
 
         if (header.getBitsPerPixel() == Constants.BITS_1) bytesPerLine = Bits.BIT1.getBytesPerLine(header.getWidth());
-        else if (header.getBitsPerPixel() == Constants.BITS_4 || header.getBitsPerPixel() == Constants.BITS_4_GRAY)  bytesPerLine = Bits.BIT4.getBytesPerLine(header.getWidth());
-        else if (header.getBitsPerPixel() == Constants.BITS_8 || header.getBitsPerPixel() == Constants.BITS_8_GRAY)  bytesPerLine = Bits.BIT8.getBytesPerLine(header.getWidth());
+        else if (header.getBitsPerPixel() == Constants.BITS_8)  bytesPerLine = Bits.BIT8.getBytesPerLine(header.getWidth());
         else if (header.getBitsPerPixel() == Constants.BITS_24)  bytesPerLine = Bits.BIT24.getBytesPerLine(header.getWidth());
-        else if (header.getBitsPerPixel() == Constants.BITS_32)  bytesPerLine = Bits.BIT32.getBytesPerLine(header.getWidth());
 
         // File size
         fileSize = offset + bytesPerLine * header.getHeight();

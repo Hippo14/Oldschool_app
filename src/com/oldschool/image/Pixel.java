@@ -28,6 +28,13 @@ public class Pixel {
         this.reserved = 0;
     }
 
+    public Pixel(int red, int green, int blue) {
+        this.red = red;
+        this.green = green;
+        this.blue = blue;
+        this.reserved = 0;
+    }
+
     public int getRed() {
         return red;
     }

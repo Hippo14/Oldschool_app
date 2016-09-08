@@ -44,23 +44,26 @@ abstract public class Operation {
     }
 
     private BmpFile convertToGrayscale(BmpFile file) throws IOException, BadImageTypeException {
-        if (file.getHeader().getBitsPerPixel() == Constants.BITS_4 || file.getHeader().getBitsPerPixel() == Constants.BITS_8) {
-            Pixel[] pixels = file.getImage().getPixels();
+        if (file.getHeader().getBitsPerPixel() == Constants.BITS_24) {
+            int reds[][] = file.getImage().getReds();
+            int greens[][] = file.getImage().getGreens();
+            int blues[][] = file.getImage().getBlues();
 
-            for (int i = 0; i < pixels.length; i++) {
-                Pixel pixel = pixels[i];
+            for (int x = 0; x < file.getHeader().getWidth(); x++) {
+                for (int y = 0; y < file.getHeader().getHeight(); y++) {
+                    int grayscale = (int) (0.3 * reds[x][y] + 0.6 * greens[x][y] + 0.1 * blues[x][y]);
 
-                int grayscale = (int) (0.3 * pixel.getRed() + 0.6 * pixel.getGreen() + 0.1 * pixel.getBlue());
-
-                pixels[i] = new Pixel(grayscale);
+                    reds[x][y] = grayscale;
+                    greens[x][y] = grayscale;
+                    blues[x][y] = grayscale;
+                }
             }
-            file.getImage().setPixels(pixels);
-            file.setNewIndexColorModel(pixels);
+
+            file.getImage().setReds(reds);
+            file.getImage().setGreens(greens);
+            file.getImage().setBlues(blues);
 
             return file;
-        }
-        else if (file.getHeader().getBitsPerPixel() == Constants.BITS_24 || file.getHeader().getBitsPerPixel() == Constants.BITS_32) {
-            throw new BadImageTypeException("Obrazek jest 24bit lub 32bit!");
         }
         else throw new BadImageTypeException("Zly typ obrazka!");
     }
@@ -71,6 +74,12 @@ abstract public class Operation {
                 makeAlgorithm(x, y);
             }
         }
+
+//        for (int y = file.getHeader().getHeight() - 1; y >= 0; y--) {
+//            for (int x = 0; x < file.getHeader().getWidth(); x++) {
+//                makeAlgorithm(x, y);
+//            }
+//        }
     }
 
     public abstract void makeAlgorithm(int x, int y);
