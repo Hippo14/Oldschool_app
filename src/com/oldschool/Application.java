@@ -5,6 +5,7 @@ import com.oldschool.algorithm.binary.logical.Product;
 import com.oldschool.algorithm.binary.logical.Sum;
 import com.oldschool.algorithm.binary.logical.XOR;
 import com.oldschool.algorithm.grayscale.arytm.SumConst;
+import com.oldschool.algorithm.grayscale.histogram.Histogram;
 import com.oldschool.algorithm.normalize.Normalize;
 import com.oldschool.image.bitmap.BmpFile;
 import com.oldschool.image.bitmap.exception.BadImageSizeException;
@@ -84,28 +85,40 @@ public class Application {
         switch (option) {
             case 1:
                 logicNegation();
-                break;
+            break;
             case 2:
                 logicSum();
-                break;
+            break;
             case 3:
                 logicProduct();
-                break;
+            break;
             case 4:
                 logicXOR();
-                break;
+            break;
             case 5:
                 graySum();
-                break;
+            break;
             case 6:
                 graySumConst();
-                break;
+            break;
             case 7:
                 rgbSum();
-                break;
+            break;
+            case 8:
+                grayHistogram();
+            break;
         }
 
 
+    }
+
+    private void grayHistogram() throws IOException, BadImageTypeException {
+        Histogram histogram = new Histogram(file);
+        File file = new File(sDir);
+        String histogramDir =file.getParent() + "\\";
+        histogram.toTextFile(histogramDir);
+
+        this.file = histogram.getFile();
     }
 
     private void rgbSum() throws BadImageSizeException, UnknownFormatException, BadImageTypeException, IOException {

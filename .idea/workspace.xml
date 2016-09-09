@@ -1,33 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="104e4393-8d7f-4c4f-9565-815d4da5e414" name="Default" comment="v0.0.3&#10;- RGB arytm done">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/Divide.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/DivideConst.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/Exponentation.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/Log.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/Multiplication.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/MultiplicationConst.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/Roots.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/SumConst.java" />
+    <list default="true" id="104e4393-8d7f-4c4f-9565-815d4da5e414" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/utils/Convert.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/oldschool/Application.java" afterPath="$PROJECT_DIR$/src/com/oldschool/Application.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/oldschool/algorithm/binary/logical/Logical.java" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/binary/logical/Logical.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/oldschool/algorithm/binary/logical/Negation.java" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/binary/logical/Negation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/oldschool/algorithm/binary/logical/Product.java" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/binary/logical/Product.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/oldschool/algorithm/binary/logical/Sum.java" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/binary/logical/Sum.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/oldschool/algorithm/binary/logical/XOR.java" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/binary/logical/XOR.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/Divide.java" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/Divide.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/DivideConst.java" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/DivideConst.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/Log.java" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/Log.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/Multiplication.java" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/Multiplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/MultiplicationConst.java" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/MultiplicationConst.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/Operation.java" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/Operation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/Roots.java" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/Roots.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/Sum.java" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/Sum.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/SumConst.java" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/SumConst.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/Operation.java" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/Operation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/Sum.java" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/Sum.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/histogram/Histogram.java" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/histogram/Histogram.java" />
     </list>
     <ignored path="Oldschool_app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,113 +28,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DivideConst.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/DivideConst.java">
+      <file leaf-file-name="Histogram.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/histogram/Histogram.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="548">
-              <caret line="34" column="54" selection-start-line="19" selection-start-column="8" selection-end-line="34" selection-end-column="54" />
+            <state relative-caret-position="190">
+              <caret line="50" column="34" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1831#1832#0" expanded="true" />
+                <element signature="e#1858#1859#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Multiplication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/Multiplication.java">
+      <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/oldschool/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="38" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MultiplicationConst.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/MultiplicationConst.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Exponentation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/Exponentation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" column="54" selection-start-line="18" selection-start-column="8" selection-end-line="29" selection-end-column="54" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Log.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/Log.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="54" selection-start-line="18" selection-start-column="8" selection-end-line="28" selection-end-column="54" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Roots.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/Roots.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="63" selection-start-line="24" selection-start-column="63" selection-end-line="24" selection-end-column="63" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Roots.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/Roots.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="20" column="57" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="57" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Log.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/Log.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="20" column="56" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Operation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/Operation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="25" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MultiplicationConst.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/MultiplicationConst.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+            <state relative-caret-position="466">
+              <caret line="120" column="40" selection-start-line="120" selection-start-column="40" selection-end-line="120" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -173,6 +64,7 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="Hippo14" />
         <option value="Hippo14 &lt;hippo14@gmail.com&gt;" />
       </list>
     </option>
@@ -199,7 +91,6 @@
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/Exponentation.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/types/Binary.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/image/Pixel.java" />
-        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/histogram/Histogram.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/Main.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/image/bitmap/bits/Bits.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/image/bitmap/read/Read.java" />
@@ -212,7 +103,6 @@
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/Sum.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/SumConst.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/Operation.java" />
-        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/Operation.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/Divide.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/DivideConst.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/Log.java" />
@@ -226,7 +116,6 @@
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/binary/logical/Product.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/binary/logical/Sum.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/binary/logical/XOR.java" />
-        <option value="$PROJECT_DIR$/src/com/oldschool/Application.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/Divide.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/DivideConst.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/Multiplication.java" />
@@ -234,6 +123,10 @@
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/Exponentation.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/Log.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/Roots.java" />
+        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/utils/Convert.java" />
+        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/Operation.java" />
+        <option value="$PROJECT_DIR$/src/com/oldschool/Application.java" />
+        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/histogram/Histogram.java" />
       </list>
     </option>
   </component>
@@ -281,7 +174,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
@@ -364,6 +256,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Oldschool_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Oldschool_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="oldschool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algorithm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="arytm" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -415,6 +333,10 @@
               <option name="myItemId" value="grayscale" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="histogram" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -443,37 +365,12 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="arytm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Oldschool_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Oldschool_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="oldschool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="algorithm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="logical" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -946,12 +843,22 @@
       <workItem from="1473331591329" duration="636000" />
       <workItem from="1473335967808" duration="1083000" />
       <workItem from="1473357867706" duration="6856000" />
-      <workItem from="1473400911770" duration="3321000" />
+      <workItem from="1473400911770" duration="4049000" />
+      <workItem from="1473412661270" duration="20000" />
+      <workItem from="1473415320672" duration="3115000" />
     </task>
+    <task id="LOCAL-00001" summary="v0.0.3&#10;- RGB arytm done">
+      <created>1473405689592</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1473405689592</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55132000" />
+    <option name="totallyTimeSpent" value="58995000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="870" extended-state="6" />
@@ -964,7 +871,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32384825" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32384825" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1016,7 +923,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/Operation.java</url>
-          <line>77</line>
+          <line>53</line>
           <properties />
           <option name="timeStamp" value="41" />
         </line-breakpoint>
@@ -1036,7 +943,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/oldschool/PlayHard.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_73/src.zip!/java/lang/ClassLoader.java" />
     <entry file="file://$PROJECT_DIR$/src/com/oldschool/PlayHard.java" />
     <entry file="file://$PROJECT_DIR$/src/com/oldschool/image/bitmap/exception/UnknownFormatException.java">
@@ -1099,7 +1005,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1111,19 +1016,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/histogram/Histogram.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="30" column="7" selection-start-line="16" selection-start-column="6" selection-end-line="30" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/oldschool/image/bitmap/bits/Constants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1139,7 +1035,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1147,57 +1042,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2448">
           <caret line="195" column="33" selection-start-line="195" selection-start-column="33" selection-end-line="195" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#3063#3064#0" expanded="false" />
-            <element signature="e#3098#3099#0" expanded="false" />
-            <element signature="e#3131#3132#0" expanded="false" />
-            <element signature="e#3163#3164#0" expanded="false" />
-            <element signature="e#3209#3210#0" expanded="false" />
-            <element signature="e#3245#3246#0" expanded="false" />
-            <element signature="e#3296#3297#0" expanded="false" />
-            <element signature="e#3338#3339#0" expanded="false" />
-            <element signature="e#3377#3378#0" expanded="false" />
-            <element signature="e#3407#3408#0" expanded="false" />
-            <element signature="e#3446#3447#0" expanded="false" />
-            <element signature="e#3484#3485#0" expanded="false" />
-            <element signature="e#3513#3514#0" expanded="false" />
-            <element signature="e#3541#3542#0" expanded="false" />
-            <element signature="e#3571#3572#0" expanded="false" />
-            <element signature="e#3600#3601#0" expanded="false" />
-            <element signature="e#3637#3638#0" expanded="false" />
-            <element signature="e#3669#3670#0" expanded="false" />
-            <element signature="e#3705#3706#0" expanded="false" />
-            <element signature="e#3737#3738#0" expanded="false" />
-            <element signature="e#3765#3766#0" expanded="false" />
-            <element signature="e#3792#3793#0" expanded="false" />
-            <element signature="e#3827#3828#0" expanded="false" />
-            <element signature="e#3859#3860#0" expanded="false" />
-            <element signature="e#3894#3895#0" expanded="false" />
-            <element signature="e#3926#3927#0" expanded="false" />
-            <element signature="e#3956#3957#0" expanded="false" />
-            <element signature="e#3985#3986#0" expanded="false" />
-            <element signature="e#4031#4032#0" expanded="false" />
-            <element signature="e#4076#4077#0" expanded="false" />
-            <element signature="e#4108#4109#0" expanded="false" />
-            <element signature="e#4137#4138#0" expanded="false" />
-            <element signature="e#4183#4184#0" expanded="false" />
-            <element signature="e#4228#4229#0" expanded="false" />
-            <element signature="e#4256#4257#0" expanded="false" />
-            <element signature="e#4283#4284#0" expanded="false" />
-            <element signature="e#4311#4312#0" expanded="false" />
-            <element signature="e#4338#4339#0" expanded="false" />
-            <element signature="e#4382#4383#0" expanded="false" />
-            <element signature="e#4425#4426#0" expanded="false" />
-            <element signature="e#4472#4473#0" expanded="false" />
-            <element signature="e#4518#4519#0" expanded="false" />
-            <element signature="e#4552#4553#0" expanded="false" />
-            <element signature="e#4581#4582#0" expanded="false" />
-            <element signature="e#4612#4613#0" expanded="false" />
-            <element signature="e#4638#4639#0" expanded="false" />
-            <element signature="e#5438#5439#0" expanded="false" />
-            <element signature="e#5486#5487#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1227,10 +1071,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="178">
           <caret line="61" column="16" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="16" />
-          <folding>
-            <element signature="e#1517#1518#0" expanded="false" />
-            <element signature="e#1551#1552#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1238,19 +1078,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="154" column="61" selection-start-line="153" selection-start-column="12" selection-end-line="154" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="class#490:3024" expanded="false" />
-            <element signature="class#3053:5210" expanded="false" />
-            <element signature="e#7343#7344#0" expanded="false" />
-            <element signature="e#7373#7374#0" expanded="false" />
-            <element signature="e#7589#7590#0" expanded="false" />
-            <element signature="e#7630#7631#0" expanded="false" />
-            <element signature="e#7682#7683#0" expanded="false" />
-            <element signature="e#7731#7732#0" expanded="false" />
-            <element signature="e#8008#8009#0" expanded="false" />
-            <element signature="e#8060#8061#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1259,7 +1086,7 @@
         <state relative-caret-position="314">
           <caret line="46" column="17" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1336,14 +1163,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oldschool/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-91">
-          <caret line="34" column="91" selection-start-line="34" selection-start-column="91" selection-end-line="34" selection-end-column="91" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/Operation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1365,7 +1184,7 @@
         <state relative-caret-position="476">
           <caret line="28" column="1" selection-start-line="28" selection-start-column="1" selection-end-line="30" selection-end-column="54" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1398,19 +1217,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/Multiplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
+        <state relative-caret-position="425">
           <caret line="28" column="38" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/Operation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="25" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1424,7 +1235,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/DivideConst.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
+        <state relative-caret-position="510">
           <caret line="34" column="54" selection-start-line="19" selection-start-column="8" selection-end-line="34" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1434,7 +1245,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/Exponentation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
+        <state relative-caret-position="442">
           <caret line="29" column="54" selection-start-line="18" selection-start-column="8" selection-end-line="29" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1444,7 +1255,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/MultiplicationConst.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
+        <state relative-caret-position="374">
           <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1470,7 +1281,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/Log.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
+        <state relative-caret-position="425">
           <caret line="28" column="54" selection-start-line="18" selection-start-column="8" selection-end-line="28" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1480,10 +1291,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/Roots.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="63" selection-start-line="24" selection-start-column="63" selection-end-line="24" selection-end-column="63" />
+        <state relative-caret-position="544">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/utils/Convert.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/Operation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="45" column="32" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oldschool/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="120" column="40" selection-start-line="120" selection-start-column="40" selection-end-line="120" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/histogram/Histogram.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="50" column="34" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1831#1832#0" expanded="true" />
+            <element signature="e#1858#1859#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,5 +1,6 @@
 package com.oldschool.algorithm.grayscale.arytm;
 
+import com.oldschool.algorithm.utils.Convert;
 import com.oldschool.image.Pixel;
 import com.oldschool.image.bitmap.BmpFile;
 import com.oldschool.image.bitmap.bits.Constants;
@@ -19,7 +20,7 @@ abstract public class Operation {
         this.constant = constant;
 
         if (!file.getHeader().getGrayscale())
-            this.file = convertToGrayscale(file);
+            this.file = Convert.convertToGrayscale(file);
         else
             this.file = file;
 
@@ -28,12 +29,12 @@ abstract public class Operation {
 
     public Operation(BmpFile file, BmpFile secondFile) throws IOException, BadImageTypeException {
         if (!file.getHeader().getGrayscale())
-            this.file = convertToGrayscale(file);
+            this.file = Convert.convertToGrayscale(file);
         else
             this.file = file;
 
         if (!secondFile.getHeader().getGrayscale())
-            this.secondFile = convertToGrayscale(secondFile);
+            this.secondFile = Convert.convertToGrayscale(secondFile);
         else
             this.secondFile = secondFile;
 
@@ -42,36 +43,11 @@ abstract public class Operation {
 
     public Operation(BmpFile file) throws IOException, BadImageTypeException {
         if (!file.getHeader().getGrayscale())
-            this.file = convertToGrayscale(file);
+            this.file = Convert.convertToGrayscale(file);
         else
             this.file = file;
 
         run();
-    }
-
-    private BmpFile convertToGrayscale(BmpFile file) throws IOException, BadImageTypeException {
-        if (file.getHeader().getBitsPerPixel() == Constants.BITS_24) {
-            int reds[][] = file.getImage().getReds();
-            int greens[][] = file.getImage().getGreens();
-            int blues[][] = file.getImage().getBlues();
-
-            for (int x = 0; x < file.getHeader().getWidth(); x++) {
-                for (int y = 0; y < file.getHeader().getHeight(); y++) {
-                    int grayscale = (int) (0.3 * reds[x][y] + 0.6 * greens[x][y] + 0.1 * blues[x][y]);
-
-                    reds[x][y] = grayscale;
-                    greens[x][y] = grayscale;
-                    blues[x][y] = grayscale;
-                }
-            }
-
-            file.getImage().setReds(reds);
-            file.getImage().setGreens(greens);
-            file.getImage().setBlues(blues);
-
-            return file;
-        }
-        else throw new BadImageTypeException("Zly typ obrazka!");
     }
 
     protected void run() {
