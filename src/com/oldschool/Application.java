@@ -14,6 +14,8 @@ import com.oldschool.image.bitmap.exception.BadImageTypeException;
 import com.oldschool.image.bitmap.exception.UnknownFormatException;
 import com.oldschool.image.bitmap.read.Read;
 import com.oldschool.image.bitmap.write.Write;
+import com.oldschool.menu.MenuBinary;
+import com.oldschool.menu.MenuGrayscale;
 
 import java.io.*;
 import java.util.Scanner;
@@ -77,45 +79,92 @@ public class Application {
     private void chooseOption() throws Exception {
         System.out.println("....");
         System.out.println("Wybierz opcje:");
-        System.out.println("1. ");
+        System.out.println("1. Operacje logiczne na obrazach binarnych");
+        System.out.println("2. Operacje sumowania arytmetycznego obrazów szarych");
+        System.out.println("3. Operacje sumowania arytmetycznego obrazów barwowych");
+        System.out.println("4. Operacje geometryczne na obrazie");
+        System.out.println("5. Operacje na histogramie obrazu szarego");
+        System.out.println("6. Operacje na histogramie obrazu barwowego");
+        System.out.println("7. Operacje morfologiczne na obrazach binarnych");
+        System.out.println("8. Operacje morfologiczne na obrazach szarych");
+        System.out.println("9. Filtrowanie liniowe i nieliniowe");
 
         Scanner input= new Scanner(System.in);
-
         int option = input.nextInt();
 
         switch (option) {
             case 1:
-                logicNegation();
+                logicBinary();
             break;
             case 2:
-                logicSum();
+                arytmGrayscale();
             break;
             case 3:
-                logicProduct();
+                arytmRGB();
             break;
             case 4:
-                logicXOR();
+                geometr();
             break;
             case 5:
-                graySum();
+                histogramGrayscale();
             break;
             case 6:
-                graySumConst();
+                histogramRGB();
             break;
             case 7:
-                rgbSum();
+                morfBinary();
             break;
             case 8:
-                grayHistogram();
-//                grayHistogramEqua();
-//                grayHistogramStretch();
+                morfGrayscale();
             break;
             case 9:
-                rgbHistogram();
+                filter();
             break;
         }
+    }
 
+    private void filter() {
 
+    }
+
+    private void morfGrayscale() {
+
+    }
+
+    private void morfBinary() {
+
+    }
+
+    private void histogramRGB() {
+
+    }
+
+    private void histogramGrayscale() {
+
+    }
+
+    private void geometr() {
+
+    }
+
+    private void arytmRGB() {
+
+    }
+
+    private void arytmGrayscale() {
+    }
+
+    private void logicBinary() {
+        Scanner input= new Scanner(System.in);
+        int option = input.nextInt();
+
+        System.out.println("1. Negacja obrazu");
+
+        switch (option) {
+            case 1:
+
+            break:
+        }
     }
 
     private void rgbHistogram() throws IOException, BadImageTypeException {
