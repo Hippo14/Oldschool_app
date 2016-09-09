@@ -12,8 +12,6 @@ public class Roots extends Operation {
 
     public Roots(BmpFile file) throws IOException, BadImageTypeException {
         super(file);
-
-        run();
     }
 
     @Override

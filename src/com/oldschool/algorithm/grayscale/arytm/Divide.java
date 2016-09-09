@@ -12,8 +12,6 @@ public class Divide extends Operation {
 
     public Divide(BmpFile file, BmpFile secondFile) throws IOException, BadImageTypeException {
         super(file, secondFile);
-
-        run();
     }
 
     @Override

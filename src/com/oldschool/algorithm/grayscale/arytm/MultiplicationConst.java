@@ -12,8 +12,6 @@ public class MultiplicationConst extends Operation {
 
     public MultiplicationConst(BmpFile file, int constant) throws IOException, BadImageTypeException {
         super(file, constant);
-
-        run();
     }
 
     @Override

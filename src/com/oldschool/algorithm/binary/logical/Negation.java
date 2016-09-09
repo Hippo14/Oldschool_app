@@ -10,8 +10,6 @@ public class Negation extends Logical {
 
     public Negation(BmpFile file) throws BadImageTypeException {
         super(file);
-
-        run();
     }
 
     @Override

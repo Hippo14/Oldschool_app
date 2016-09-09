@@ -9,8 +9,6 @@ public class Sum extends Logical{
 
     public Sum(BmpFile file, BmpFile secondFile) throws Exception {
         super(file, secondFile);
-
-        run();
     }
 
     @Override

@@ -30,6 +30,12 @@ public class Application {
     }
 
     public void initialize() throws Exception {
+
+//        http://stackoverflow.com/questions/1448858/how-to-color-system-out-println-output
+//        System.out.println((char)27 + "[31mThis text would show up red" + (char)27 + "[0m");
+
+
+
         // Get Bmp file
         file = getBmpFile();
 

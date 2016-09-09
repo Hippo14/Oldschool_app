@@ -9,8 +9,6 @@ public class Product extends Logical {
 
     public Product(BmpFile file, BmpFile secondFile) throws Exception {
         super(file, secondFile);
-
-        run();
     }
 
     @Override

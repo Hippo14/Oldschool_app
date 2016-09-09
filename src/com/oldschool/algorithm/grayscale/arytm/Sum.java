@@ -12,8 +12,6 @@ public class Sum extends Operation {
 
     public Sum(BmpFile file, BmpFile secondFile) throws IOException, BadImageTypeException {
         super(file, secondFile);
-
-        run();
     }
 
     @Override

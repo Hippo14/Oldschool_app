@@ -13,8 +13,6 @@ public class DivideConst extends Operation {
 
     public DivideConst(BmpFile file, int constant) throws IOException, BadImageTypeException {
         super(file, constant);
-
-        run();
     }
 
     @Override

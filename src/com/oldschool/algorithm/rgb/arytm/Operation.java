@@ -20,6 +20,8 @@ abstract public class Operation {
             throw new BadImageTypeException("Obrazek nie jest RGB!");
         else
             this.file = file;
+
+        run();
     }
 
     public Operation(BmpFile file, BmpFile secondFile) throws IOException, BadImageTypeException {
@@ -32,6 +34,8 @@ abstract public class Operation {
             throw new BadImageTypeException("Drugi obrazek nie jest RGB!");
         else
             this.secondFile = secondFile;
+
+        run();
     }
 
     public Operation(BmpFile file) throws IOException, BadImageTypeException {
@@ -39,6 +43,8 @@ abstract public class Operation {
             throw new BadImageTypeException("Obrazek nie jest RGB!");
         else
             this.file = file;
+
+        run();
     }
 
     protected void run() {

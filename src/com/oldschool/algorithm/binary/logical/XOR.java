@@ -9,8 +9,6 @@ public class XOR extends Logical {
 
     public XOR(BmpFile file, BmpFile secondFile) throws Exception {
         super(file, secondFile);
-
-        run();
     }
 
     @Override

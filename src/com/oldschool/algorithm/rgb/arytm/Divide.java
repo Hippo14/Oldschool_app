@@ -3,15 +3,15 @@ package com.oldschool.algorithm.rgb.arytm;
 import com.oldschool.image.bitmap.BmpFile;
 import com.oldschool.image.bitmap.exception.BadImageTypeException;
 
-import java.awt.*;
 import java.io.IOException;
 
 /**
- * Created by MSI on 2016-09-08.
+ * Created by KMacioszek on 2016-09-09.
  */
-public class Sum extends Operation {
+public class Divide extends Operation {
 
-    public Sum(BmpFile file, BmpFile secondFile) throws IOException, BadImageTypeException {
+
+    public Divide(BmpFile file, BmpFile secondFile) throws IOException, BadImageTypeException {
         super(file, secondFile);
     }
 
@@ -25,9 +25,17 @@ public class Sum extends Operation {
         int secondGreenPixel = secondFile.getImage().getGreen(x, y);
         int secondBluePixel = secondFile.getImage().getBlue(x, y);
 
-        int redSum = firstRedPixel + secondRedPixel;
-        int greenSum = firstGreenPixel + secondGreenPixel;
-        int blueSum = firstBluePixel + secondBluePixel;
+        int redSum = firstRedPixel;
+        if (secondRedPixel != 0)
+            redSum = firstRedPixel / secondRedPixel;
+
+        int greenSum = firstGreenPixel;
+        if (secondGreenPixel != 0)
+            greenSum = firstGreenPixel / secondGreenPixel;
+
+        int blueSum = firstBluePixel;
+        if (secondBluePixel != 0)
+            blueSum = firstBluePixel / secondBluePixel;
 
         file.getImage().setRed(x, y, redSum);
         file.getImage().setGreen(x, y, greenSum);

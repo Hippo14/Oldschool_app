@@ -12,8 +12,6 @@ public class SumConst extends Operation {
 
     public SumConst(BmpFile file, int constant) throws IOException, BadImageTypeException {
         super(file, constant);
-
-        run();
     }
 
     @Override

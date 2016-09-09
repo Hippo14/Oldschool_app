@@ -22,6 +22,8 @@ abstract public class Operation {
             this.file = convertToGrayscale(file);
         else
             this.file = file;
+
+        run();
     }
 
     public Operation(BmpFile file, BmpFile secondFile) throws IOException, BadImageTypeException {
@@ -34,6 +36,8 @@ abstract public class Operation {
             this.secondFile = convertToGrayscale(secondFile);
         else
             this.secondFile = secondFile;
+
+        run();
     }
 
     public Operation(BmpFile file) throws IOException, BadImageTypeException {
@@ -41,6 +45,8 @@ abstract public class Operation {
             this.file = convertToGrayscale(file);
         else
             this.file = file;
+
+        run();
     }
 
     private BmpFile convertToGrayscale(BmpFile file) throws IOException, BadImageTypeException {

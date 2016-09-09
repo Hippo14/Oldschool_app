@@ -12,8 +12,6 @@ public class Log extends Operation {
 
     public Log(BmpFile file) throws IOException, BadImageTypeException {
         super(file);
-
-        run();
     }
 
     @Override

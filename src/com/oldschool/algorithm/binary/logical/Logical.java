@@ -17,6 +17,8 @@ abstract class Logical {
             throw new BadImageTypeException("Obrazek nie jest binarny!");
 
         this.file = file;
+
+        run();
     }
 
     public Logical(BmpFile file, BmpFile secondFile) throws Exception {
@@ -27,6 +29,8 @@ abstract class Logical {
 
         this.file = file;
         this.secondFile = secondFile;
+
+        run();
     }
 
     public abstract void makeAlgorithm(int x, int y);

@@ -12,8 +12,6 @@ public class Multiplication extends Operation {
 
     public Multiplication(BmpFile file, BmpFile secondFile) throws IOException, BadImageTypeException {
         super(file, secondFile);
-
-        run();
     }
 
     @Override
