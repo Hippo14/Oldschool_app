@@ -7,6 +7,7 @@ import com.oldschool.algorithm.binary.logical.XOR;
 import com.oldschool.algorithm.grayscale.arytm.SumConst;
 import com.oldschool.algorithm.grayscale.histogram.Histogram;
 import com.oldschool.algorithm.normalize.Normalize;
+import com.oldschool.algorithm.rgb.histogram.RGBHistogram;
 import com.oldschool.image.bitmap.BmpFile;
 import com.oldschool.image.bitmap.exception.BadImageSizeException;
 import com.oldschool.image.bitmap.exception.BadImageTypeException;
@@ -106,16 +107,51 @@ public class Application {
             break;
             case 8:
                 grayHistogram();
+//                grayHistogramEqua();
+//                grayHistogramStretch();
+            break;
+            case 9:
+                rgbHistogram();
             break;
         }
 
 
     }
 
+    private void rgbHistogram() throws IOException, BadImageTypeException {
+        RGBHistogram rgbHistogram = new RGBHistogram(file);
+        File file = new File(sDir);
+        String histogramDir =file.getParent() + "\\";
+        rgbHistogram.equalization();
+        rgbHistogram.toTextFile(histogramDir);
+
+        this.file = rgbHistogram.getFile();
+    }
+
     private void grayHistogram() throws IOException, BadImageTypeException {
         Histogram histogram = new Histogram(file);
         File file = new File(sDir);
         String histogramDir =file.getParent() + "\\";
+        histogram.toTextFile(histogramDir);
+
+        this.file = histogram.getFile();
+    }
+
+    private void grayHistogramEqua() throws IOException, BadImageTypeException {
+        Histogram histogram = new Histogram(file);
+        File file = new File(sDir);
+        String histogramDir =file.getParent() + "\\";
+        histogram.equalization();
+        histogram.toTextFile(histogramDir);
+
+        this.file = histogram.getFile();
+    }
+
+    private void grayHistogramStretch() throws IOException, BadImageTypeException {
+        Histogram histogram = new Histogram(file);
+        File file = new File(sDir);
+        String histogramDir =file.getParent() + "\\";
+        histogram.stretching();
         histogram.toTextFile(histogramDir);
 
         this.file = histogram.getFile();
