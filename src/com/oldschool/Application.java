@@ -157,18 +157,17 @@ public class Application {
         System.out.print(Config.get("menuWybierzOpcje"));
         option = input.nextInt();
 
-        com.oldschool.algorithm.grayscale.morphology.Morphology morphology;
 
         switch (option) {
             case 1:
-                morphology = new com.oldschool.algorithm.grayscale.morphology.Erosion(file);
-                this.file = morphology.getFile();
-                clazz = morphology.getClass();
+                com.oldschool.algorithm.grayscale.morphology.Erosion erosion = new com.oldschool.algorithm.grayscale.morphology.Erosion(file);
+                this.file = erosion.getFile();
+                clazz = erosion.getClass();
                 break;
             case 2:
-                morphology = new com.oldschool.algorithm.grayscale.morphology.Dilation(file);
-                this.file = morphology.getFile();
-                clazz = morphology.getClass();
+                com.oldschool.algorithm.grayscale.morphology.Dilation dilation = new com.oldschool.algorithm.grayscale.morphology.Dilation(file);
+                this.file = dilation.getFile();
+                clazz = dilation.getClass();
                 break;
             case 3:
                 com.oldschool.algorithm.grayscale.morphology.Opening opening = new com.oldschool.algorithm.grayscale.morphology.Opening(file);
@@ -191,18 +190,16 @@ public class Application {
         System.out.print(Config.get("menuWybierzOpcje"));
         option = input.nextInt();
 
-        Morphology morphology;
-
         switch (option) {
             case 1:
-                morphology = new Erosion(file);
-                this.file = morphology.getFile();
-                clazz = morphology.getClass();
+                Erosion erosion = new Erosion(file);
+                this.file = erosion.getFile();
+                clazz = erosion.getClass();
             break;
             case 2:
-                morphology = new Dilation(file);
-                this.file = morphology.getFile();
-                clazz = morphology.getClass();
+                Dilation dilation = new Dilation(file);
+                this.file = dilation.getFile();
+                clazz = dilation.getClass();
             break;
             case 3:
                 Opening opening = new Opening(file);

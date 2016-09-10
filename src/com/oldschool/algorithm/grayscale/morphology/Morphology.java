@@ -5,6 +5,10 @@ import com.oldschool.image.bitmap.BmpFile;
 import com.oldschool.image.bitmap.exception.BadImageTypeException;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Created by MSI on 2016-09-10.
@@ -12,7 +16,7 @@ import java.io.IOException;
 public abstract class Morphology {
 
     BmpFile file;
-    private int size = 2;
+    private int size = 3;
 
     public Morphology(BmpFile file) throws BadImageTypeException, IOException {
         if (!file.getHeader().getGrayscale())
@@ -24,30 +28,29 @@ public abstract class Morphology {
     }
 
     public void run() {
+        int[][] oldPixels = file.getImage().getReds();
+        int[][] newPixels = new int[file.getHeader().getWidth()][file.getHeader().getHeight()];
+
+
         for (int x = 0; x < file.getHeader().getWidth(); x++) {
             for (int y = 0; y < file.getHeader().getHeight(); y++) {
-                int centralPixel = file.getImage().getRed(x, y);
+                int pixel = oldPixels[x][y];
 
                 for (int i = x - size; i < x + size; i++) {
                     for (int j = y - size; j < y + size; j++) {
-                        if ((i >= 0&&j >= 0) && (i < file.getHeader().getHeight()&&j < file.getHeader().getWidth())) {
-                            try {
-                                centralPixel = makeAlgorithm(centralPixel, i, j);
-                            } catch (Exception e) {
+                        try {
+                            pixel = makeAlgorithm(pixel, i, j);
+                        } catch (Exception e) {
 
-                            }
                         }
                     }
                 }
-                try {
-                    file.getImage().setRed(x, y, centralPixel);
-                    file.getImage().setGreen(x, y, centralPixel);
-                    file.getImage().setBlue(x, y, centralPixel);
-                } catch (Exception e) {
-
-                }
+                newPixels[x][y] = pixel;
             }
         }
+        file.getImage().setReds(newPixels);
+        file.getImage().setGreens(newPixels);
+        file.getImage().setBlues(newPixels);
     }
 
     protected abstract int makeAlgorithm(int centralPixel, int i, int j);
