@@ -9,6 +9,7 @@ public class Loader {
 
     private static boolean loading = true;
     private static Thread th;
+
     public static synchronized void start(String msg) throws IOException, InterruptedException {
         System.out.println(msg);
         th = new Thread() {
@@ -36,6 +37,7 @@ public class Loader {
         while(Loader.getStatus());
         loading = true;
     }
+
 
     public static boolean getStatus() {
         return th.isAlive();

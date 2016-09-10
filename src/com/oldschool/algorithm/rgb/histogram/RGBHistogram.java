@@ -26,7 +26,7 @@ public class RGBHistogram {
             this.file = file;
     }
 
-    void init() {
+    void init() throws IOException, BadImageTypeException {
 
     }
 

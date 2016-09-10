@@ -70,4 +70,8 @@ public class Histogram {
     public BmpFile getFile() {
         return file;
     }
+
+    public int[] getHistogram() {
+        return histogram;
+    }
 }

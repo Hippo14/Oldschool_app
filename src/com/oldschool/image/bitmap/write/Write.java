@@ -66,28 +66,12 @@ public class Write {
     }
 
     private void writeImage(LitEndOutputStream input) throws IOException {
-//        if (header.getBitsPerPixel() <= Constants.BITS_8) writeColorMap(indexColorModel, input);
         if (header.getBitsPerPixel() <= Constants.BITS_8) writeColorMap(pixels, input);
 
         if (header.getBitsPerPixel() == Constants.BITS_1)       Bits.BIT1.write(file, input);
         else if (header.getBitsPerPixel() == Constants.BITS_8)  Bits.BIT8.write(file, input);
         else if (header.getBitsPerPixel() == Constants.BITS_24) Bits.BIT24.write(file, input);
     }
-
-//    private void writeColorMap(IndexColorModel indexColorModel, LitEndOutputStream input) throws IOException {
-//        int mapSize = indexColorModel.getMapSize();
-//        for (int i = 0; i < mapSize; i++) {
-//            int rgb = indexColorModel.getRGB(i);
-//            int r = (rgb >> 16) & 0xFF;
-//            int g = (rgb >> 8) & 0xFF;
-//            int b = (rgb) & 0xFF;
-//
-//            input.writeByte(b);
-//            input.writeByte(g);
-//            input.writeByte(r);
-//            input.writeByte(0);
-//        }
-//    }
 
     private void writeColorMap(Pixel[] pixels, LitEndOutputStream input) throws IOException {
         int mapSize = pixels.length;

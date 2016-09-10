@@ -14,6 +14,7 @@ import com.oldschool.algorithm.grayscale.histogram.Equalization;
 import com.oldschool.algorithm.grayscale.histogram.Histogram;
 import com.oldschool.algorithm.grayscale.histogram.Stretching;
 import com.oldschool.algorithm.normalize.Normalize;
+import com.oldschool.algorithm.rgb.histogram.Otsu;
 import com.oldschool.algorithm.rgb.histogram.RGBHistogram;
 import com.oldschool.algorithm.rgb.histogram.Threeshold;
 import com.oldschool.algorithm.utils.Config;
@@ -164,6 +165,7 @@ public class Application {
 
         switch (option) {
             case 1:
+                histogram.histogram();
                 file = histogram.getFile();
                 break;
             case 2:
@@ -180,7 +182,8 @@ public class Application {
                 file = histogram.getFile();
             break;
             case 5:
-
+                histogram = new Otsu(file);
+                file = histogram.getFile();
             break;
         }
         histogram.toTextFile(path);
