@@ -26,18 +26,22 @@ public abstract class Morphology {
     public void run() {
         for (int x = 0; x < file.getHeader().getHeight(); x++) {
             for (int y = 0; y < file.getHeader().getWidth(); y++) {
-                int centralPixel = file.getImage().getRed(x, y);
+                try {
+                    int centralPixel = file.getImage().getRed(x, y);
 
-                for (int i = x - size; i < x + size; i++) {
-                    for (int j = y - size; j < y + size; j++) {
-                        if ((i >= 0&&j >= 0) && (i < file.getHeader().getHeight()&&j < file.getHeader().getWidth())) {
-                            centralPixel = makeAlgorithm(centralPixel, i, j);
+                    for (int i = x - size; i < x + size; i++) {
+                        for (int j = y - size; j < y + size; j++) {
+                            if ((i >= 0 && j >= 0) && (i < file.getHeader().getHeight() && j < file.getHeader().getWidth())) {
+                                centralPixel = makeAlgorithm(centralPixel, i, j);
+                            }
                         }
                     }
+                    file.getImage().setRed(x, y, centralPixel);
+                    file.getImage().setGreen(x, y, centralPixel);
+                    file.getImage().setBlue(x, y, centralPixel);
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-                file.getImage().setRed(x, y, centralPixel);
-                file.getImage().setGreen(x, y, centralPixel);
-                file.getImage().setBlue(x, y, centralPixel);
             }
         }
     }

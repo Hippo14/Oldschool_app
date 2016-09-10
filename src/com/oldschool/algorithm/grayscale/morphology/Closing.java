@@ -9,19 +9,19 @@ import java.io.IOException;
 /**
  * Created by MSI on 2016-09-10.
  */
-public class Opening {
+public class Closing {
 
     BmpFile file;
 
-    public Opening(BmpFile file) throws IOException, BadImageTypeException {
+    public Closing(BmpFile file) throws IOException, BadImageTypeException {
         if (!file.getHeader().getGrayscale())
             this.file = Convert.convertToGrayscale(file);
         else
             this.file = file;
 
-        Erosion erosion = new Erosion(file);
-        Dilation dilation = new Dilation(erosion.getFile());
-        this.file = dilation.getFile();
+        Dilation dilation = new Dilation(file);
+        Erosion erosion = new Erosion(dilation.getFile());
+        this.file = erosion.getFile();
     }
 
     public BmpFile getFile() {

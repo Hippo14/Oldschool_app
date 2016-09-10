@@ -1,6 +1,12 @@
 package com.oldschool;
 
 import com.oldschool.algorithm.binary.logical.*;
+import com.oldschool.algorithm.binary.morphology.*;
+import com.oldschool.algorithm.binary.morphology.Closing;
+import com.oldschool.algorithm.binary.morphology.Dilation;
+import com.oldschool.algorithm.binary.morphology.Erosion;
+import com.oldschool.algorithm.binary.morphology.Morphology;
+import com.oldschool.algorithm.binary.morphology.Opening;
 import com.oldschool.algorithm.grayscale.arytm.Divide;
 import com.oldschool.algorithm.grayscale.arytm.DivideConst;
 import com.oldschool.algorithm.grayscale.arytm.Exponentation;
@@ -13,6 +19,7 @@ import com.oldschool.algorithm.grayscale.arytm.SumConst;
 import com.oldschool.algorithm.grayscale.histogram.Equalization;
 import com.oldschool.algorithm.grayscale.histogram.Histogram;
 import com.oldschool.algorithm.grayscale.histogram.Stretching;
+import com.oldschool.algorithm.grayscale.morphology.*;
 import com.oldschool.algorithm.normalize.Normalize;
 import com.oldschool.algorithm.rgb.histogram.Otsu;
 import com.oldschool.algorithm.rgb.histogram.RGBHistogram;
@@ -142,12 +149,72 @@ public class Application {
 
     }
 
-    private void morfGrayscale() {
+    private void morfGrayscale() throws IOException, BadImageTypeException {
+        System.out.println(Config.get("menu81"));
+        System.out.println(Config.get("menu82"));
+        System.out.println(Config.get("menu83"));
+        System.out.println(Config.get("menu84"));
+        System.out.print(Config.get("menuWybierzOpcje"));
+        option = input.nextInt();
 
+        com.oldschool.algorithm.grayscale.morphology.Morphology morphology;
+
+        switch (option) {
+            case 1:
+                morphology = new com.oldschool.algorithm.grayscale.morphology.Erosion(file);
+                this.file = morphology.getFile();
+                clazz = morphology.getClass();
+                break;
+            case 2:
+                morphology = new com.oldschool.algorithm.grayscale.morphology.Dilation(file);
+                this.file = morphology.getFile();
+                clazz = morphology.getClass();
+                break;
+            case 3:
+                com.oldschool.algorithm.grayscale.morphology.Opening opening = new com.oldschool.algorithm.grayscale.morphology.Opening(file);
+                this.file = opening.getFile();
+                clazz = opening.getClass();
+                break;
+            case 4:
+                com.oldschool.algorithm.grayscale.morphology.Closing closing = new com.oldschool.algorithm.grayscale.morphology.Closing(file);
+                this.file = closing.getFile();
+                clazz = closing.getClass();
+                break;
+        }
     }
 
-    private void morfBinary() {
+    private void morfBinary() throws BadImageTypeException {
+        System.out.println(Config.get("menu81"));
+        System.out.println(Config.get("menu82"));
+        System.out.println(Config.get("menu83"));
+        System.out.println(Config.get("menu84"));
+        System.out.print(Config.get("menuWybierzOpcje"));
+        option = input.nextInt();
 
+        Morphology morphology;
+
+        switch (option) {
+            case 1:
+                morphology = new Erosion(file);
+                this.file = morphology.getFile();
+                clazz = morphology.getClass();
+            break;
+            case 2:
+                morphology = new Dilation(file);
+                this.file = morphology.getFile();
+                clazz = morphology.getClass();
+            break;
+            case 3:
+                Opening opening = new Opening(file);
+                this.file = opening.getFile();
+                clazz = opening.getClass();
+            break;
+            case 4:
+                Closing closing = new Closing(file);
+                this.file = closing.getFile();
+                clazz = closing.getClass();
+            break;
+        }
     }
 
     private void histogramRGB() throws IOException, BadImageTypeException, InterruptedException {
