@@ -17,14 +17,16 @@ public class DivideConst extends Operation {
 
     @Override
     public void makeAlgorithm(int x, int y) {
-        int firstPixel = file.getImage().getValue(x, y);
+        int firstPixel = file.getImage().getRed(x, y);
 
         if (constant != 0)
             firstPixel /= constant;
         else
             throw new IllegalArgumentException("Nie mozna dzielic przez 0!");
 
-        file.getImage().setValue(firstPixel, x, y);
+        file.getImage().setRed(x, y, firstPixel);
+        file.getImage().setGreen(x, y, firstPixel);
+        file.getImage().setBlue(x, y, firstPixel);
     }
 
 }

@@ -16,11 +16,13 @@ public class MultiplicationConst extends Operation {
 
     @Override
     public void makeAlgorithm(int x, int y) {
-        int firstPixel = file.getImage().getValue(x, y);
+        int firstPixel = file.getImage().getRed(x, y);
 
         firstPixel *= constant;
 
-        file.getImage().setValue(firstPixel, x, y);
+        file.getImage().setRed(x, y, firstPixel);
+        file.getImage().setGreen(x, y, firstPixel);
+        file.getImage().setBlue(x, y, firstPixel);
     }
 
 }
