@@ -22,8 +22,6 @@ public class Histogram {
             this.file = Convert.convertToGrayscale(file);
         else
             this.file = file;
-
-        histogram();
     }
 
 
@@ -67,55 +65,7 @@ public class Histogram {
         System.out.println("Done");
     }
 
-    public void equalization() {
-        int sum = 0;
-        int anzpixel = file.getHeader().getWidth() * file.getHeader().getHeight();
-        int[] iarray = new int[1];
-
-        float[] lut = new float[anzpixel];
-        for (int i = 0; i < histogram.length; ++i) {
-            sum += histogram[i];
-            lut[i] = sum * 255 / anzpixel;
-        }
-
-        for (int x = 0; x < file.getHeader().getWidth(); x++) {
-            for (int y = 0; y < file.getHeader().getHeight(); y++) {
-                int valueBefore = file.getImage().getRed(x, y);
-                int valueAfter = (int) lut[valueBefore];
-                iarray[0] = valueAfter;
-
-                file.getImage().setRed(x, y, iarray[0]);
-                file.getImage().setGreen(x, y, iarray[0]);
-                file.getImage().setBlue(x, y, iarray[0]);
-            }
-        }
-    }
-
-    public void stretching() {
-        int g;
-        int minG = (int) Math.pow(2, 8) , maxG = 0;
-
-        for (int x = 0; x < file.getHeader().getWidth(); x++) {
-            for (int y = 0; y < file.getHeader().getHeight(); y++) {
-                if (file.getImage().getRed(x, y) > maxG)
-                    maxG = file.getImage().getRed(x, y);
-                if (file.getImage().getRed(x, y)  < minG)
-                    minG = file.getImage().getRed(x, y) ;
-            }
-        }
-
-        for (int x = 0; x < file.getHeader().getWidth(); x++) {
-            for (int y = 0; y < file.getHeader().getHeight(); y++) {
-                g = ( 255 / (maxG - minG) ) * (file.getImage().getRed(x, y)  - minG);
-                int[] dArray = {g};
-
-                file.getImage().setRed(x, y, dArray[0]);
-                file.getImage().setGreen(x, y, dArray[0]);
-                file.getImage().setBlue(x, y, dArray[0]);
-            }
-        }
-
-    }
+    void init() { }
 
     public BmpFile getFile() {
         return file;

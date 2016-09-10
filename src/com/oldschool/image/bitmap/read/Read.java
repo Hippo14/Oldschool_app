@@ -1,5 +1,6 @@
 package com.oldschool.image.bitmap.read;
 
+import com.oldschool.algorithm.utils.Config;
 import com.oldschool.image.Pixel;
 import com.oldschool.image.bitmap.BmpFile;
 import com.oldschool.image.bitmap.BmpHeader;
@@ -19,7 +20,7 @@ public class Read {
     BmpHeader header;
     BmpImage image;
 
-    public Read(InputStream inputStream) throws IOException, UnknownFormatException {
+    public Read(InputStream inputStream) throws IOException, UnknownFormatException, InterruptedException {
         LitEndInputStream input = new LitEndInputStream(inputStream);
 
         // File header
@@ -33,7 +34,7 @@ public class Read {
         return new BmpHeader(input);
     }
 
-    private BmpImage readImage(LitEndInputStream input) throws IOException, UnknownFormatException {
+    private BmpImage readImage(LitEndInputStream input) throws IOException, UnknownFormatException, InterruptedException {
         Pixel[] pixels = null;
 
         // Get color table
@@ -74,13 +75,13 @@ public class Read {
         return true;
     }
 
-    private BmpImage getPixels(Pixel[] pixels, LitEndInputStream input) throws IOException, UnknownFormatException {
+    private BmpImage getPixels(Pixel[] pixels, LitEndInputStream input) throws IOException, UnknownFormatException, InterruptedException {
         if (header.getCompressionType() == 0) {
             if (header.getBitsPerPixel() == Constants.BITS_1)       return Bits.BIT1.read(header, input, pixels);
             else if (header.getBitsPerPixel() == Constants.BITS_8)  return Bits.BIT8.read(header, input, pixels);
             else if (header.getBitsPerPixel() == Constants.BITS_24) return Bits.BIT24.read(header, input, pixels);
         }
-        throw new UnknownFormatException("Nieznany format bmp: bitCount= " + header.getBitsPerPixel() + ", compression= " + header.getCompressionType());
+        throw new UnknownFormatException(Config.get("unknownBMPFormat") + "bitCount= " + header.getBitsPerPixel() + ", compression= " + header.getCompressionType());
     }
 
     public BmpFile getBmpFile() {

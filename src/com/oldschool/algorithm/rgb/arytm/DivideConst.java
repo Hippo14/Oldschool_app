@@ -1,5 +1,6 @@
 package com.oldschool.algorithm.rgb.arytm;
 
+import com.oldschool.algorithm.utils.Config;
 import com.oldschool.image.bitmap.BmpFile;
 import com.oldschool.image.bitmap.exception.BadImageTypeException;
 
@@ -27,7 +28,7 @@ public class DivideConst extends Operation {
             firstBluePixel /= constant;
         }
         else
-            throw new IllegalArgumentException("Nie mozna dzielic przez 0!");
+            throw new IllegalArgumentException(Config.get("0_exception"));
 
 
         file.getImage().setRed(x, y, firstRedPixel);

@@ -1,5 +1,6 @@
 package com.oldschool.algorithm.rgb.arytm;
 
+import com.oldschool.algorithm.utils.Config;
 import com.oldschool.image.bitmap.BmpFile;
 import com.oldschool.image.bitmap.exception.BadImageTypeException;
 
@@ -17,7 +18,7 @@ abstract public class Operation {
         this.constant = constant;
 
         if (!file.getHeader().getRGB())
-            throw new BadImageTypeException("Obrazek nie jest RGB!");
+            throw new BadImageTypeException(Config.get("bit_not_rgb"));
         else
             this.file = file;
 
@@ -26,12 +27,12 @@ abstract public class Operation {
 
     public Operation(BmpFile file, BmpFile secondFile) throws IOException, BadImageTypeException {
         if (!file.getHeader().getRGB())
-            throw new BadImageTypeException("Pierwszy obrazek nie jest RGB!");
+            throw new BadImageTypeException(Config.get("bit_first_not_rgb"));
         else
             this.file = file;
 
         if (!secondFile.getHeader().getRGB())
-            throw new BadImageTypeException("Drugi obrazek nie jest RGB!");
+            throw new BadImageTypeException(Config.get("bit_second_not_rgb"));
         else
             this.secondFile = secondFile;
 
@@ -40,7 +41,7 @@ abstract public class Operation {
 
     public Operation(BmpFile file) throws IOException, BadImageTypeException {
         if (!file.getHeader().getRGB())
-            throw new BadImageTypeException("Obrazek nie jest RGB!");
+            throw new BadImageTypeException(Config.get("bit_not_rgb"));
         else
             this.file = file;
 

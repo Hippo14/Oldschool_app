@@ -1,5 +1,6 @@
 package com.oldschool.image.bitmap;
 
+import com.oldschool.algorithm.utils.Config;
 import com.oldschool.image.bitmap.bits.Constants;
 import com.oldschool.image.bitmap.read.LitEndInputStream;
 import com.oldschool.image.bitmap.write.LitEndOutputStream;
@@ -89,7 +90,7 @@ public class BmpHeader {
         signature = new String(bSignature, "UTF-8");
 
         if (!Constants.BITMAP_TYPE.equals(signature))
-            throw new IOException("Niepoprawna sygnatura " + signature);
+            throw new IOException(Config.get("bad_signature") + signature);
     }
 
     public short getBitsPerPixel() {

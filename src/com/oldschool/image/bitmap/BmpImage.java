@@ -154,4 +154,8 @@ public class BmpImage {
     public void setBlues(int[][] blues) {
         this.blue = blues;
     }
+
+    public void createBit() {
+        bit = new int[width][height];
+    }
 }

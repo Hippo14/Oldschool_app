@@ -1,5 +1,6 @@
 package com.oldschool.image.bitmap.bits;
 
+import com.oldschool.algorithm.utils.Loader;
 import com.oldschool.image.Pixel;
 import com.oldschool.image.bitmap.BmpFile;
 import com.oldschool.image.bitmap.BmpHeader;
@@ -17,9 +18,10 @@ public enum Bits {
 
     BIT1(Constants.BITS_1) {
         @Override
-        public BmpImage read(BmpHeader header, LitEndInputStream input, Pixel[] pixels) throws IOException {
+        public BmpImage read(BmpHeader header, LitEndInputStream input, Pixel[] pixels) throws IOException, InterruptedException {
             BmpImage outputImage = new BmpImage(Constants.BITS_1, header.getWidth(), header.getHeight());
             outputImage.setPixels(pixels);
+            Loader.start("Wczytywanie obrazka");
 
             byte[] r = new byte[pixels.length];
             byte[] g = new byte[pixels.length];
@@ -52,6 +54,7 @@ public enum Bits {
                 }
             }
 
+            Loader.stop();
             return outputImage;
         }
 
@@ -85,9 +88,10 @@ public enum Bits {
     },
     BIT8(Constants.BITS_8) {
         @Override
-        public BmpImage read(BmpHeader header, LitEndInputStream input, Pixel[] pixels) throws IOException {
+        public BmpImage read(BmpHeader header, LitEndInputStream input, Pixel[] pixels) throws IOException, InterruptedException {
             BmpImage outputImage = new BmpImage(Constants.BITS_8, header.getWidth(), header.getHeight());
             outputImage.setPixels(pixels);
+            Loader.start("Wczytywanie obrazka");
 
             byte[] r = new byte[pixels.length];
             byte[] g = new byte[pixels.length];
@@ -116,6 +120,7 @@ public enum Bits {
                 input.skip(padBytesPerLine);
             }
 
+            Loader.stop();
             return outputImage;
         }
 
@@ -143,8 +148,9 @@ public enum Bits {
     },
     BIT24(Constants.BITS_24) {
         @Override
-        public BmpImage read(BmpHeader header, LitEndInputStream input, Pixel[] pixels) throws IOException {
+        public BmpImage read(BmpHeader header, LitEndInputStream input, Pixel[] pixels) throws IOException, InterruptedException {
             BmpImage outputImage = new BmpImage(Constants.BITS_24, header.getWidth(), header.getHeight());
+            Loader.start("Wczytywanie obrazka");
 
             int dataPerLine = header.getWidth() * 3;
             int bytesPerLine = dataPerLine;
@@ -163,6 +169,8 @@ public enum Bits {
                 }
                 input.skip(padBytesPerLine);
             }
+
+            Loader.stop();
 
             return outputImage;
         }
@@ -202,7 +210,7 @@ public enum Bits {
         this.bit = bit;
     }
 
-    public abstract BmpImage read(BmpHeader header, LitEndInputStream input, Pixel[] pixels) throws IOException;
+    public abstract BmpImage read(BmpHeader header, LitEndInputStream input, Pixel[] pixels) throws IOException, InterruptedException;
 
     public abstract int getBytesPerLine(int width);
 

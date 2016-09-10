@@ -1,5 +1,6 @@
 package com.oldschool.algorithm.utils;
 
+import com.oldschool.image.Pixel;
 import com.oldschool.image.bitmap.BmpFile;
 import com.oldschool.image.bitmap.bits.Constants;
 import com.oldschool.image.bitmap.exception.BadImageTypeException;
@@ -12,6 +13,8 @@ import java.io.IOException;
 public class Convert {
 
     public static BmpFile convertToGrayscale(BmpFile file) throws IOException, BadImageTypeException {
+        System.out.println(Config.get("convertToGrayscale"));
+
         if (file.getHeader().getBitsPerPixel() == Constants.BITS_24) {
             int reds[][] = file.getImage().getReds();
             int greens[][] = file.getImage().getGreens();
@@ -33,7 +36,27 @@ public class Convert {
 
             return file;
         }
-        else throw new BadImageTypeException("Zly typ obrazka!");
+        else throw new BadImageTypeException(Config.get("bit_bad_image"));
     }
 
+    public static BmpFile convertToBinare(BmpFile file) throws BadImageTypeException {
+        System.out.println(Config.get("convertToBin"));
+
+        if (file.getHeader().getBitsPerPixel() == Constants.BITS_24) {
+            file.getHeader().setRGB(false);
+            file.getHeader().setGrayscale(false);
+            file.getHeader().setBinary(true);
+
+            file.getHeader().setBitsPerPixel((short) 1);
+
+            // Create pixel table
+            Pixel[] pixels = new Pixel[2];
+            pixels[0] = new Pixel(0, 0, 0);
+            pixels[1] = new Pixel(255, 255, 255);
+            file.getImage().setPixels(pixels);
+
+            return file;
+        }
+        else throw new BadImageTypeException(Config.get("bit_bad_image"));
+    }
 }

@@ -1,5 +1,6 @@
 package com.oldschool.algorithm.binary.logical;
 
+import com.oldschool.algorithm.utils.Config;
 import com.oldschool.image.bitmap.BmpFile;
 import com.oldschool.image.bitmap.exception.BadImageSizeException;
 import com.oldschool.image.bitmap.exception.BadImageTypeException;
@@ -7,14 +8,14 @@ import com.oldschool.image.bitmap.exception.BadImageTypeException;
 /**
  * Created by KMacioszek on 2016-09-05.
  */
-abstract class Logical {
+abstract public class Logical {
 
     BmpFile file;
     BmpFile secondFile;
 
     public Logical(BmpFile file) throws BadImageTypeException {
         if (!file.getHeader().getBinary())
-            throw new BadImageTypeException("Obrazek nie jest binarny!");
+            throw new BadImageTypeException(Config.get("bit_not_bin"));
 
         this.file = file;
 
@@ -23,9 +24,9 @@ abstract class Logical {
 
     public Logical(BmpFile file, BmpFile secondFile) throws Exception {
         if (!file.getHeader().getBinary())
-            throw new BadImageTypeException("Pierwszy obrazek nie jest binarny!");
+            throw new BadImageTypeException(Config.get("bit_first_not_bin"));
         if (!secondFile.getHeader().getBinary())
-            throw new BadImageTypeException("Drugi obrazek nie jest binarny!");
+            throw new BadImageTypeException(Config.get("bit_second_not_bin"));
 
         this.file = file;
         this.secondFile = secondFile;
