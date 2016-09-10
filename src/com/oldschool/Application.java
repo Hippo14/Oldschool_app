@@ -7,6 +7,8 @@ import com.oldschool.algorithm.binary.morphology.Dilation;
 import com.oldschool.algorithm.binary.morphology.Erosion;
 import com.oldschool.algorithm.binary.morphology.Morphology;
 import com.oldschool.algorithm.binary.morphology.Opening;
+import com.oldschool.algorithm.filters.Filter;
+import com.oldschool.algorithm.filters.FilterList;
 import com.oldschool.algorithm.grayscale.arytm.Divide;
 import com.oldschool.algorithm.grayscale.arytm.DivideConst;
 import com.oldschool.algorithm.grayscale.arytm.Exponentation;
@@ -32,7 +34,13 @@ import com.oldschool.image.bitmap.exception.UnknownFormatException;
 import com.oldschool.image.bitmap.read.Read;
 import com.oldschool.image.bitmap.write.Write;
 
+import javax.annotation.PostConstruct;
 import java.io.*;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -145,8 +153,28 @@ public class Application {
         }
     }
 
-    private void filter() {
+    private void filter() throws NoSuchMethodException, IllegalAccessException, BadImageTypeException, InvocationTargetException {
+        Class c = FilterList.class;
+        int i = 0;
+        List<String> methodNames = new ArrayList<>();
 
+        // Find all methods in FilterList.class
+        for (Method method : c.getDeclaredMethods()) {
+            System.out.println(i++ + ". " + method.getName());
+            methodNames.add(method.getName());
+        }
+
+        // Choose option
+        System.out.print(Config.get("menuWybierzOpcje"));
+        option = input.nextInt();
+
+//        Collections.sort(methodNames);
+
+        // Initialize chosen method from FilterList.class
+        FilterList filterList = new FilterList(file, methodNames.get(option));
+        file = filterList.getFile();
+
+        this.clazz = filterList.getClass();
     }
 
     private void morfGrayscale() throws IOException, BadImageTypeException {
