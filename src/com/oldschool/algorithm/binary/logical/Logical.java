@@ -2,13 +2,12 @@ package com.oldschool.algorithm.binary.logical;
 
 import com.oldschool.algorithm.utils.Config;
 import com.oldschool.image.bitmap.BmpFile;
-import com.oldschool.image.bitmap.exception.BadImageSizeException;
 import com.oldschool.image.bitmap.exception.BadImageTypeException;
 
 /**
  * Created by KMacioszek on 2016-09-05.
  */
-abstract public class Logical {
+public abstract class Logical {
 
     BmpFile file;
     BmpFile secondFile;

@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="104e4393-8d7f-4c4f-9565-815d4da5e414" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/histogram/Otsu.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/morphology/Dilation.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/morphology/Erosion.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/morphology/Morphology.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/morphology/Opening.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/oldschool/Application.java" afterPath="$PROJECT_DIR$/src/com/oldschool/Application.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/histogram/Histogram.java" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/histogram/Histogram.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/histogram/RGBHistogram.java" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/histogram/RGBHistogram.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/oldschool/algorithm/utils/Loader.java" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/utils/Loader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/oldschool/image/bitmap/write/Write.java" afterPath="$PROJECT_DIR$/src/com/oldschool/image/bitmap/write/Write.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/oldschool/algorithm/binary/logical/Logical.java" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/binary/logical/Logical.java" />
     </list>
     <ignored path="Oldschool_app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -62,8 +61,8 @@
             <file leaf-file-name="config.properties" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/config.properties">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="906">
-                    <caret line="65" column="18" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="18" />
+                  <state relative-caret-position="668">
+                    <caret line="55" column="46" selection-start-line="55" selection-start-column="46" selection-end-line="55" selection-end-column="46" />
                     <folding />
                   </state>
                 </provider>
@@ -80,11 +79,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Application.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/oldschool/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="183" column="19" selection-start-line="183" selection-start-column="19" selection-end-line="183" selection-end-column="19" />
+            <state relative-caret-position="138">
+              <caret line="149" column="0" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
               <folding>
                 <element signature="docComment;class#Application#0" expanded="false" />
                 <element signature="method#Application#0;class#Application#0" expanded="false" />
@@ -93,8 +92,6 @@
                 <element signature="method#normalize#0;class#Application#0" expanded="false" />
                 <element signature="method#writeBmp#0;class#Application#0" expanded="false" />
                 <element signature="method#filter#0;class#Application#0" expanded="false" />
-                <element signature="method#morfGrayscale#0;class#Application#0" expanded="false" />
-                <element signature="method#morfBinary#0;class#Application#0" expanded="false" />
                 <element signature="method#histogramGrayscale#0;class#Application#0" expanded="false" />
                 <element signature="method#geometr#0;class#Application#0" expanded="false" />
                 <element signature="method#arytmRGB#0;class#Application#0" expanded="false" />
@@ -106,46 +103,6 @@
                 <element signature="method#getConstant#0;class#Application#0" expanded="false" />
                 <element signature="method#getName#0;class#Application#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Loader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/utils/Loader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Otsu.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/histogram/Otsu.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Read.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/oldschool/image/bitmap/read/Read.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
-              <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Bits.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/oldschool/image/bitmap/bits/Bits.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="173" column="0" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -181,27 +138,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/Sum.java" />
-        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/SumConst.java" />
-        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/binary/logical/Negation.java" />
-        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/binary/logical/Product.java" />
-        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/binary/logical/Sum.java" />
-        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/binary/logical/XOR.java" />
-        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/Divide.java" />
-        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/Multiplication.java" />
-        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/MultiplicationConst.java" />
-        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/Exponentation.java" />
-        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/Log.java" />
-        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/Roots.java" />
-        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/Operation.java" />
-        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/histogram/Histogram.java" />
-        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/histogram/rgbHistogram.java" />
-        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/RGBHistogram.java" />
-        <option value="$PROJECT_DIR$/src/com/oldschool/menu/binary/Logic.java" />
-        <option value="$PROJECT_DIR$/src/com/oldschool/menu/Menu.java" />
-        <option value="$PROJECT_DIR$/src/com/oldschool/menu/binary/MenuLogic.java" />
-        <option value="$PROJECT_DIR$/src/com/oldschool/menu/binary/MenuBinary.java" />
-        <option value="$PROJECT_DIR$/src/com/oldschool/menu/MenuGrayscale.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/menu/MenuBinary.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/Multiplication.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/Divide.java" />
@@ -210,7 +146,6 @@
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/MultiplicationConst.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/Roots.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/utils/Config.java" />
-        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/binary/logical/Logical.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/DivideConst.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/DivideConst.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/Operation.java" />
@@ -222,16 +157,38 @@
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/histogram/RGBHistogram.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/histogram/Equalization.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/histogram/Stretching.java" />
-        <option value="$PROJECT_DIR$/config.properties" />
         <option value="$PROJECT_DIR$/src/com/oldschool/image/bitmap/BmpImage.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/utils/Convert.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/histogram/Threeshold.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/image/bitmap/write/Write.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/histogram/Histogram.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/histogram/Otsu.java" />
-        <option value="$PROJECT_DIR$/src/com/oldschool/Application.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/utils/Loader.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/image/bitmap/bits/Bits.java" />
+        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/binary/morph/MaskArray.java" />
+        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/binary/morph/Morphology.java" />
+        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/binary/morph/Erosion.java" />
+        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/binary/morphology/MaskArray.java" />
+        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/morphology/MaskArray.java" />
+        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/normalize/morphology/Erosion.java" />
+        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/morphology/Dilation.java" />
+        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/morphology/Opening.java" />
+        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/morphology/Closing.java" />
+        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/morphology/Morphology.java" />
+        <option value="$PROJECT_DIR$/config.properties" />
+        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/morphology/Morphology.java" />
+        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/morphology/Erosion.java" />
+        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/morphology/Dilation.java" />
+        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/morphology/Opening.java" />
+        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/binary/morphology/Closing.java" />
+        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/binary/logical/Logical.java" />
+        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/binary/morphology/Dilation.java" />
+        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/binary/morphology/Ero.java" />
+        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/binary/morphology/Erosion.java" />
+        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/morphology/Erosion.java" />
+        <option value="$PROJECT_DIR$/src/com/oldschool/morphology/Erosion.java" />
+        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/binary/morphology/Morphology.java" />
+        <option value="$PROJECT_DIR$/src/com/oldschool/Application.java" />
       </list>
     </option>
   </component>
@@ -253,6 +210,28 @@
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Declaration redundancyJava</id>
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>WeakerAccess</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -415,10 +394,6 @@
               <option name="myItemId" value="algorithm" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="utils" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -441,6 +416,10 @@
               <option name="myItemId" value="algorithm" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grayscale" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -459,11 +438,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.oldschool.algorithm.morphology" />
+      <recent name="com.oldschool.algorithm.binary.morphology" />
+      <recent name="com.oldschool.algorithm.binary.morph" />
       <recent name="com.oldschool" />
       <recent name="com.oldschool.algorithm.grayscale.histogram" />
-      <recent name="com.oldschool.algorithm.rgb" />
-      <recent name="com.oldschool.algorithm.rgb.histogram" />
-      <recent name="com.oldschool.algorithm.binary.logical" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\MSI\Documents\GitHub\Oldschool_app\src" />
@@ -929,7 +908,7 @@
       <workItem from="1473436679004" duration="3376000" />
       <workItem from="1473465283565" duration="2778000" />
       <workItem from="1473468117181" duration="20000" />
-      <workItem from="1473499930256" duration="10397000" />
+      <workItem from="1473499930256" duration="13548000" />
     </task>
     <task id="LOCAL-00001" summary="v0.0.3&#10;- RGB arytm done">
       <created>1473405689592</created>
@@ -980,15 +959,22 @@
       <option name="project" value="LOCAL" />
       <updated>1473507728449</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added otsu threshold">
+      <created>1473510377831</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1473510377831</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78958000" />
+    <option name="totallyTimeSpent" value="82109000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -997,12 +983,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42470205" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42470205" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42470205" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18443497" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18443497" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1061,7 +1047,8 @@
     <MESSAGE value="v0.0.5" />
     <MESSAGE value="v0.0.6" />
     <MESSAGE value="v0.1.0&#10;- Added RGB Histogram&#10;- Binarize&#10;- Loader&#10;- New menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="v0.1.0&#10;- Added RGB Histogram&#10;- Binarize&#10;- Loader&#10;- New menu" />
+    <MESSAGE value="Added otsu threshold" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added otsu threshold" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1088,162 +1075,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/Sum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/binary/logical/Negation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/binary/logical/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/binary/logical/Sum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/binary/logical/XOR.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/SumConst.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="1" selection-start-line="28" selection-start-column="1" selection-end-line="30" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/Divide.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="41" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/Multiplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="28" column="38" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/Exponentation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="29" column="54" selection-start-line="18" selection-start-column="8" selection-end-line="29" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/MultiplicationConst.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/Log.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="28" column="54" selection-start-line="18" selection-start-column="8" selection-end-line="28" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/Roots.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/histogram/RGBHistogram.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oldschool/menu/MenuGrayscale.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/oldschool/menu/MenuBinary.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/oldschool/menu/Menu.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/Divide.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/MultiplicationConst.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="24" column="48" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/Sum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="13" column="32" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/SumConst.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/Multiplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="25" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/Roots.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="24" column="48" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/Exponentation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="24" column="48" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/normalize/Normalize.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -1256,14 +1087,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/Operation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1285,14 +1108,6 @@
             <element signature="e#806#807#0" expanded="false" />
             <element signature="e#857#858#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/binary/logical/Logical.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1358,14 +1173,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="15" column="15" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="906">
-          <caret line="65" column="18" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="18" />
           <folding />
         </state>
       </provider>
@@ -1472,10 +1279,237 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oldschool/image/bitmap/bits/Bits.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2278">
+          <caret line="173" column="0" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oldschool/image/bitmap/BmpFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+          <folding>
+            <element signature="e#493#494#0" expanded="true" />
+            <element signature="e#521#522#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/binary/morph/Erosion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="23" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/binary/morph/Morphology.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/binary/morph/MaskArray.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="39" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/binary/morphology/MaskArray.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-85">
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/binary/morphology/Erosion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/binary/morphology/Morphology.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/binary/morphology/MaskArray.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/arytm/Operation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="34" column="0" selection-start-line="30" selection-start-column="8" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="668">
+          <caret line="55" column="46" selection-start-line="55" selection-start-column="46" selection-end-line="55" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/morphology/Erosion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="24" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/morphology/Dilation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/morphology/Opening.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/morphology/Morphology.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/binary/logical/Negation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/binary/logical/Product.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/binary/logical/Sum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/binary/logical/XOR.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/binary/logical/Logical.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-390">
+          <caret line="3" column="42" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/binary/morphology/Dilation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/binary/morphology/Erosion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/binary/morphology/Erosion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/binary/morphology/Closing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="47" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/binary/morphology/Opening.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="18" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/binary/morphology/Morphology.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="117" column="91" selection-start-line="117" selection-start-column="70" selection-end-line="117" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/oldschool/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="183" column="19" selection-start-line="183" selection-start-column="19" selection-end-line="183" selection-end-column="19" />
+        <state relative-caret-position="138">
+          <caret line="149" column="0" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#Application#0" expanded="false" />
             <element signature="method#Application#0;class#Application#0" expanded="false" />
@@ -1484,8 +1518,6 @@
             <element signature="method#normalize#0;class#Application#0" expanded="false" />
             <element signature="method#writeBmp#0;class#Application#0" expanded="false" />
             <element signature="method#filter#0;class#Application#0" expanded="false" />
-            <element signature="method#morfGrayscale#0;class#Application#0" expanded="false" />
-            <element signature="method#morfBinary#0;class#Application#0" expanded="false" />
             <element signature="method#histogramGrayscale#0;class#Application#0" expanded="false" />
             <element signature="method#geometr#0;class#Application#0" expanded="false" />
             <element signature="method#arytmRGB#0;class#Application#0" expanded="false" />
@@ -1497,14 +1529,6 @@
             <element signature="method#getConstant#0;class#Application#0" expanded="false" />
             <element signature="method#getName#0;class#Application#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oldschool/image/bitmap/bits/Bits.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="173" column="0" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
