@@ -4,6 +4,8 @@ import com.oldschool.algorithm.binary.logical.Negation;
 import com.oldschool.algorithm.binary.logical.Product;
 import com.oldschool.algorithm.binary.logical.Sum;
 import com.oldschool.algorithm.binary.logical.XOR;
+import com.oldschool.algorithm.grayscale.arytm.Multiplication;
+import com.oldschool.algorithm.grayscale.arytm.MultiplicationConst;
 import com.oldschool.algorithm.grayscale.arytm.SumConst;
 import com.oldschool.algorithm.grayscale.histogram.Histogram;
 import com.oldschool.algorithm.normalize.Normalize;
@@ -14,8 +16,6 @@ import com.oldschool.image.bitmap.exception.BadImageTypeException;
 import com.oldschool.image.bitmap.exception.UnknownFormatException;
 import com.oldschool.image.bitmap.read.Read;
 import com.oldschool.image.bitmap.write.Write;
-import com.oldschool.menu.MenuBinary;
-import com.oldschool.menu.MenuGrayscale;
 
 import java.io.*;
 import java.util.Scanner;
@@ -25,9 +25,13 @@ import java.util.Scanner;
  */
 public class Application {
 
-    BmpFile file;
+    BmpFile file, secondFile;
     String sDir;
-    private BmpFile secondBmpFile;
+
+    Scanner input= new Scanner(System.in);
+    int option;
+    private final String ANSI_CLS = "\u001b[2J";
+    private int constant;
 
     public Application() {
 
@@ -78,7 +82,6 @@ public class Application {
 
     private void chooseOption() throws Exception {
         System.out.println("....");
-        System.out.println("Wybierz opcje:");
         System.out.println("1. Operacje logiczne na obrazach binarnych");
         System.out.println("2. Operacje sumowania arytmetycznego obrazów szarych");
         System.out.println("3. Operacje sumowania arytmetycznego obrazów barwowych");
@@ -88,9 +91,11 @@ public class Application {
         System.out.println("7. Operacje morfologiczne na obrazach binarnych");
         System.out.println("8. Operacje morfologiczne na obrazach szarych");
         System.out.println("9. Filtrowanie liniowe i nieliniowe");
+        System.out.print("Wybierz opcje: ");
 
-        Scanner input= new Scanner(System.in);
-        int option = input.nextInt();
+        option = input.nextInt();
+
+        System.out.println(ANSI_CLS);
 
         switch (option) {
             case 1:
@@ -151,19 +156,71 @@ public class Application {
 
     }
 
-    private void arytmGrayscale() {
-    }
-
-    private void logicBinary() {
-        Scanner input= new Scanner(System.in);
-        int option = input.nextInt();
-
-        System.out.println("1. Negacja obrazu");
+    private void arytmGrayscale() throws BadImageSizeException, UnknownFormatException, BadImageTypeException, IOException {
+        System.out.println("1. Sumowanie obrazów");
+        System.out.println("2. Sumowanie stałej z obrazem");
+        System.out.println("3. Mnożenie obrazów");
+        System.out.println("4. Mnożenie obrazu przez liczbę");
+        System.out.println("5. Potęgowanie obrazu");
+        System.out.println("6. Dzielenie obrazów");
+        System.out.println("7. Dzielenie obrazu przez liczbę");
+        System.out.println("8. Pierwiastkowanie obrazu");
+        System.out.println("9. Logarytmowanie obrazu");
+        System.out.print("Wybierz opcje: ");
+        option = input.nextInt();
 
         switch (option) {
             case 1:
+                secondFile = getSecondBmpFile();
+                com.oldschool.algorithm.grayscale.arytm.Sum sum = new com.oldschool.algorithm.grayscale.arytm.Sum(file, secondFile);
+                file = sum.getFile();
+                break;
+            case 2:
+                constant = getConstant();
+                SumConst sumConst = new SumConst(file, constant);
+                file = sumConst.getFile();
+                break;
+            case 3:
+                secondFile = getSecondBmpFile();
+                Multiplication multiplication = new Multiplication(file, secondFile);
+                file = multiplication.getFile();
+                break;
+            case 4:
+                constant = getConstant();
+                MultiplicationConst multiplicationConst = new MultiplicationConst(file, constant);
+                file = multiplicationConst.getFile();
+                break;
+        }
+    }
 
-            break:
+    private void logicBinary() throws Exception {
+        System.out.println("1. Negacja obrazu");
+        System.out.println("2. Suma logiczna obrazów");
+        System.out.println("3. Iloczyn logiczny obrazów");
+        System.out.println("4. Operacja XOR");
+        System.out.print("Wybierz opcje: ");
+        option = input.nextInt();
+
+        switch (option) {
+            case 1:
+                Negation negation = new Negation(file);
+                file = negation.getFile();
+            break;
+            case 2:
+                secondFile = getSecondBmpFile();
+                Sum sum = new Sum(file, secondFile);
+                file = sum.getFile();
+            break;
+            case 3:
+                secondFile = getSecondBmpFile();
+                Product product = new Product(file, secondFile);
+                file = product.getFile();
+            break;
+            case 4:
+                secondFile = getSecondBmpFile();
+                XOR xor = new XOR(file, secondFile);
+                file = xor.getFile();
+            break;
         }
     }
 
@@ -214,9 +271,7 @@ public class Application {
     }
 
     private void graySumConst() throws IOException, BadImageTypeException {
-        System.out.println("Podaj stala: ");
-        Scanner input= new Scanner(System.in);
-        int constant = input.nextInt();
+
 
         SumConst sumConst = new SumConst(file, constant);
         file = sumConst.getFile();
@@ -293,5 +348,31 @@ public class Application {
             throw new BadImageSizeException("Obrazki nie maja takich samych rozmiarow!");
 
         return secondFile;
+    }
+
+    public final static void clearConsole()
+    {
+        try
+        {
+            final String os = System.getProperty("os.name");
+
+            if (os.contains("Windows"))
+            {
+                Runtime.getRuntime().exec("cls");
+            }
+            else
+            {
+                Runtime.getRuntime().exec("clear");
+            }
+        }
+        catch (final Exception e)
+        {
+            //  Handle any exceptions.
+        }
+    }
+
+    public int getConstant() {
+        System.out.println("Podaj stala: ");
+        return input.nextInt();
     }
 }
