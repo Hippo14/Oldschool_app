@@ -24,27 +24,32 @@ public abstract class Morphology {
     public void run() {
         for (int x = 0; x < file.getHeader().getHeight(); x++) {
             for (int y = 0; y < file.getHeader().getWidth(); y++) {
-                MaskArray mask = new MaskArray(2 * size + 1);
-                Integer[][] maskArray = mask.getMaskArray();
-                int sum = file.getImage().getBit(x, y);
-                int k, l;
+                try {
+                    MaskArray mask = new MaskArray(2 * size + 1);
+                    Integer[][] maskArray = mask.getMaskArray();
+                    int sum = file.getImage().getBit(x, y);
+                    int k, l;
 
-                for (int i = x - size; i < x + size; i++) {
-                    k = 0; l = 0;
-                    for (int j = y - size; j < y + size; j++) {
-                        if ((i >= 0&&j >= 0) && (i < file.getHeader().getHeight()&&j < file.getHeader().getWidth())) {
-                            try {
-                                sum = makeAlgorithm(i, j, k, l, sum, maskArray);
-                            } catch (Exception e) {
+                    for (int i = x - size; i < x + size; i++) {
+                        k = 0;
+                        l = 0;
+                        for (int j = y - size; j < y + size; j++) {
+                            if ((i >= 0 && j >= 0) && (i < file.getHeader().getHeight() && j < file.getHeader().getWidth())) {
+                                try {
+                                    sum = makeAlgorithm(i, j, k, l, sum, maskArray);
+                                } catch (Exception e) {
 
+                                }
+                                l++;
                             }
-                            l++;
                         }
+                        k++;
                     }
-                    k++;
-                }
 
-                file.getImage().setBit(sum, x, y);
+                    file.getImage().setBit(sum, x, y);
+                } catch (Exception e) {
+
+                }
             }
         }
     }
