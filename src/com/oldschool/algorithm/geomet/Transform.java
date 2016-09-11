@@ -14,9 +14,9 @@ public class Transform {
     }
 
     public BmpFile moveImage(int uX, int uY) {
-        int[][] reds = newMatrix();
-        int[][] greens = newMatrix();
-        int[][] blues = newMatrix();
+        int[][] reds = newMatrix(file.getHeader().getWidth(), file.getHeader().getHeight());
+        int[][] greens = newMatrix(file.getHeader().getWidth(), file.getHeader().getHeight());
+        int[][] blues = newMatrix(file.getHeader().getWidth(), file.getHeader().getHeight());
 
         for (int x = 0; x < file.getHeader().getWidth(); x++) {
             for (int y = 0; y < file.getHeader().getHeight(); y++) {
@@ -34,21 +34,32 @@ public class Transform {
         return file;
     }
 
-    public BmpFile scaleImage(int uX, int uY) {
-        int[][] reds = newMatrix();
-        int[][] greens = newMatrix();
-        int[][] blues = newMatrix();
+    public BmpFile scaleImage(int newWidth, int newHeight) {
+//        int[][] reds = newMatrix(file.getHeader().getWidth(), file.getHeader().getHeight());
+//        int[][] greens = newMatrix(file.getHeader().getWidth(), file.getHeader().getHeight());
+//        int[][] blues = newMatrix(file.getHeader().getWidth(), file.getHeader().getHeight());
 
-        for (int x = 0; x < file.getHeader().getWidth(); x++) {
-            for (int y = 0; y < file.getHeader().getHeight(); y++) {
-                int newX = x * uX;
-                int newY = y * uY;
+        int[][] reds = newMatrix(newWidth, newHeight);
+        int[][] greens = newMatrix(newWidth, newHeight);
+        int[][] blues = newMatrix(newWidth, newHeight);
+
+        double xRatio = file.getHeader().getWidth() / (double) newWidth;
+        double yRatio = file.getHeader().getHeight() / (double) newHeight;
+        double pX, pY;
+
+        resizeImage(newWidth, newHeight);
+
+        for (int i = 0; i < newHeight; i++) {
+            for (int j = 0; j < newWidth; j++) {
+                pX = Math.floor(j * xRatio);
+                pY = Math.floor(i * yRatio);
 
                 try {
-                    reds[newX][newY] = file.getImage().getRed(x, y);
-                    greens[newX][newY] = file.getImage().getGreen(x, y);
-                    blues[newX][newY] = file.getImage().getBlue(x, y);
+                    reds[j][i] = file.getImage().getRed((int)pX, (int)pY);
+                    greens[j][i] = file.getImage().getGreen((int)pX, (int)pY);
+                    blues[j][i] = file.getImage().getBlue((int)pX, (int)pY);
                 } catch (Exception e) {}
+
             }
         }
         file.getImage().setReds(reds);
@@ -58,10 +69,15 @@ public class Transform {
         return file;
     }
 
+    private void resizeImage(int newWidth, int newHeight) {
+        file.getHeader().setWidth(newWidth);
+        file.getHeader().setHeight(newHeight);
+    }
+
     public BmpFile rotateImage(int degree) {
-        int[][] reds = newMatrix();
-        int[][] greens = newMatrix();
-        int[][] blues = newMatrix();
+        int[][] reds = newMatrix(file.getHeader().getWidth(), file.getHeader().getHeight());
+        int[][] greens = newMatrix(file.getHeader().getWidth(), file.getHeader().getHeight());
+        int[][] blues = newMatrix(file.getHeader().getWidth(), file.getHeader().getHeight());
 
         for (int x = 0; x < file.getHeader().getWidth(); x++) {
             for (int y = 0; y < file.getHeader().getHeight(); y++) {
@@ -91,8 +107,8 @@ public class Transform {
         return file;
     }
 
-    private int[][] newMatrix() {
-        int[][] matrix = new int[file.getHeader().getWidth()][file.getHeader().getWidth()];
+    private int[][] newMatrix(int newWidth, int newHeight) {
+        int[][] matrix = new int[newWidth][newHeight];
         for(int x = 0; x < matrix.length; x++)
             for(int y = 0; y < matrix[x].length; y++)
                 matrix[x][y] = 0;

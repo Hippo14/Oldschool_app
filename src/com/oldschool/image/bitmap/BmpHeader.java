@@ -207,4 +207,12 @@ public class BmpHeader {
     public void setBitsPerPixel(short bitsPerPixel) {
         this.bitsPerPixel = bitsPerPixel;
     }
+
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
 }

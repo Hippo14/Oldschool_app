@@ -330,6 +330,7 @@ public class Application {
                 file = transform.moveImage(x, y);
                 break;
             case 2:
+                System.out.println("Podaj rozmiary nowego obrazka:");
                 x = getConstant();
                 y = getConstant();
                 transform.scaleImage(x, y);
