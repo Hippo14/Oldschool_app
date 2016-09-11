@@ -217,128 +217,129 @@ public class Application {
 
         switch (option) {
             case 1:
-                Class c = FilterList.class;
-                int i = 1;
-                List<String> methodNames = new ArrayList<>();
-
-                // Find all methods in FilterList.class
-                for (Method method : c.getDeclaredMethods()) {
-                    System.out.println(i++ + ". " + method.getName());
-                    methodNames.add(method.getName());
-                }
-
-                System.out.println(Config.get("menuBack"));
-
-                // Choose option
-                System.out.print(Config.get("menuWybierzOpcje"));
-                option = input.nextInt();
-
-                if (option == 0) {
-                    choose();
-                    return;
-                }
-
-                // Initialize chosen method from FilterList.class
-                FilterList filterList = new FilterList(file, methodNames.get(option + 1));
-                file = filterList.getFile();
-
-                this.clazz = filterList.getClass();
-
-//                Class c = FilterList.class;
-//
-//                List<String> methodNames = new ArrayList<>();
-//
-//                // Find all methods in FilterList.class
-//                for (Method method : c.getDeclaredMethods()) {
-//                    methodNames.add(method.getName());
-//                }
-//
-//                BmpFile tempFile = this.file;
-//
-//                for (Method method : c.getDeclaredMethods()) {
-//                    FilterList filterList = new FilterList(file, method.getName());
-//                    file = filterList.getFile();
-//                    this.clazz = filterList.getClass();
-//                    writeBmp(method.getName() + "_");
-//                    normalize();
-//                    writeBmp(method.getName() + "_normalize");
-//                    this.file = tempFile;
-//                }
+                lowPass();
                 break;
             case 2:
-                FilterMaximum filterMaximum = new FilterMaximum(file);
-                file = filterMaximum.getFile();
-                this.clazz = filterMaximum.getClass();
-                break;
+                highPass();
+            break;
             case 3:
-                FilterMinimum filterMinimum = new FilterMinimum(file);
-                file = filterMinimum.getFile();
-                this.clazz = filterMinimum.getClass();
-                break;
+                gradient();
+            break;
             case 4:
                 FilterMedian filterMedian = new FilterMedian(file);
                 file = filterMedian.getFile();
                 this.clazz = filterMedian.getClass();
                 break;
+            case 5:
+                FilterMinimum filterMinimum = new FilterMinimum(file);
+                file = filterMinimum.getFile();
+                this.clazz = filterMinimum.getClass();
+            break;
+            case 6:
+                FilterMaximum filterMaximum = new FilterMaximum(file);
+                file = filterMaximum.getFile();
+                this.clazz = filterMaximum.getClass();
+                break;
             case 0:
                 choose();
                 return;
         }
+    }
 
+    private void gradient() throws NoSuchMethodException, IllegalAccessException, BadImageTypeException, InvocationTargetException {
+        System.out.println(Config.get("menu911"));
+        System.out.println(Config.get("menu932"));
+        System.out.println(Config.get("menu933"));
+        System.out.println(Config.get("menu934"));
+        System.out.println(Config.get("menu935"));
+        System.out.println(Config.get("menu936"));
+        System.out.println(Config.get("menu937"));
+        System.out.println(Config.get("menu938"));
+        System.out.println(Config.get("menuBack"));
+        System.out.print(Config.get("menuWybierzOpcje"));
+        option = input.nextInt();
 
+        FilterList filterList = new FilterList(file);
 
+        if (option == 0) {
+            choose();
+            return;
+        }
+        else if(option == 1) filterList.init("gradientDirectionalEast");
+        else if(option == 2) filterList.init("gradientDirectionalSoutheast");
+        else if(option == 3) filterList.init("gradientDirectionalSouth");
+        else if(option == 4) filterList.init("gradientDirectionalSouthwest");
+        else if(option == 5) filterList.init("gradientDirectionalSouthwest");
+        else if(option == 6) filterList.init("gradientDirectionalNorthwest");
+        else if(option == 7) filterList.init("gradientDirectionalNorth");
+        else if(option == 8) filterList.init("gradientDirectionalNortheast");
 
-//        Class c = FilterList.class;
-//
-//        List<String> methodNames = new ArrayList<>();
-//
-//        // Find all methods in FilterList.class
-//        for (Method method : c.getDeclaredMethods()) {
-//            methodNames.add(method.getName());
-//        }
-//
-//        BmpFile tempFile = this.file;
-//
-//        for (Method method : c.getDeclaredMethods()) {
-//            FilterList filterList = new FilterList(file, method.getName());
-//            file = filterList.getFile();
-//            this.clazz = filterList.getClass();
-//            writeBmp(method.getName() + "_");
-//            normalize();
-//            writeBmp(method.getName() + "_normalize");
-//            this.file = tempFile;
-//        }
+        file = filterList.getFile();
+        this.clazz = filterList.getClass();
+    }
 
+    private void highPass() throws NoSuchMethodException, IllegalAccessException, BadImageTypeException, InvocationTargetException {
+        System.out.println(Config.get("menu921"));
+        System.out.println(Config.get("menu922"));
+        System.out.println(Config.get("menu923"));
+        System.out.println(Config.get("menuBack"));
+        System.out.print(Config.get("menuWybierzOpcje"));
+        option = input.nextInt();
 
+        FilterList filterList = new FilterList(file);
 
+        if (option == 0) {
+            choose();
+            return;
+        }
+        else if(option == 1) filterList.init("highPass1");
+        else if(option == 2) filterList.init("highPass2");
+        else if(option == 3) filterList.init("highPass3");
 
+        file = filterList.getFile();
+        this.clazz = filterList.getClass();
+    }
 
-//        Class c = FilterList.class;
-//        int i = 1;
-//        List<String> methodNames = new ArrayList<>();
-//
-//        // Find all methods in FilterList.class
-//        for (Method method : c.getDeclaredMethods()) {
-//            System.out.println(i++ + ". " + method.getName());
-//            methodNames.add(method.getName());
-//        }
-//
-//        System.out.println(Config.get("menuBack"));
-//
-//        // Choose option
-//        System.out.print(Config.get("menuWybierzOpcje"));
-//        option = input.nextInt();
-//
-//        if (option == 0) {
-//            choose();
-//            return;
-//        }
-//
-//        // Initialize chosen method from FilterList.class
-//        FilterList filterList = new FilterList(file, methodNames.get(option + 1));
-//        file = filterList.getFile();
-//
-//        this.clazz = filterList.getClass();
+    private void lowPass() throws NoSuchMethodException, IllegalAccessException, BadImageTypeException, InvocationTargetException {
+        System.out.println(Config.get("menu911"));
+        System.out.println(Config.get("menu912"));
+        System.out.println(Config.get("menu913"));
+        System.out.println(Config.get("menu914"));
+        System.out.println(Config.get("menu915"));
+        System.out.println(Config.get("menu916"));
+        System.out.println(Config.get("menu917"));
+        System.out.println(Config.get("menu918"));
+        System.out.println(Config.get("menu919"));
+        System.out.println(Config.get("menu9110"));
+        System.out.println(Config.get("menu9111"));
+        System.out.println(Config.get("menu9112"));
+        System.out.println(Config.get("menu9113"));
+        System.out.println(Config.get("menuBack"));
+        System.out.print(Config.get("menuWybierzOpcje"));
+        option = input.nextInt();
+
+        FilterList filterList = new FilterList(file);
+
+        if (option == 0) {
+            choose();
+            return;
+        }
+        else if(option == 1) filterList.init("lowPassAverage");
+        else if(option == 2) filterList.init("lowPassSquare");
+        else if(option == 3) filterList.init("lowPassCircular");
+        else if(option == 4) filterList.init("lowPass1");
+        else if(option == 5) filterList.init("lowPass2");
+        else if(option == 6) filterList.init("lowPass3");
+        else if(option == 7) filterList.init("lowPassPiramid");
+        else if(option == 8) filterList.init("lowPassConical");
+        else if(option == 9) filterList.init("lowPassGauss1");
+        else if(option == 10) filterList.init("lowPassGauss2");
+        else if(option == 11) filterList.init("lowPassGauss3");
+        else if(option == 12) filterList.init("lowPassGauss4");
+        else if(option == 13) filterList.init("lowPassGauss5");
+
+        file = filterList.getFile();
+        this.clazz = filterList.getClass();
     }
 
     private void morfGrayscale() throws IOException, BadImageTypeException {

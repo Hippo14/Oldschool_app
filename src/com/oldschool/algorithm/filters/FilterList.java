@@ -11,9 +11,11 @@ import java.lang.reflect.Method;
  */
 public class FilterList extends Filter {
 
-    public FilterList(BmpFile file, String name) throws BadImageTypeException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    public FilterList(BmpFile file) throws BadImageTypeException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         super(file);
+    }
 
+    public void init(String name) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         Method method;
 
         method = this.getClass().getMethod(name);
