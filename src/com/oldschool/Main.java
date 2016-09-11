@@ -10,12 +10,6 @@ public class Main {
 
     public static void main(String[] args) {
         Application application = new Application();
-        try {
-            application.initialize();
-        } catch (Exception e) {
-//            e.printStackTrace();
-            System.out.println("[ERROR] : " + e.getMessage());
-            e.printStackTrace();
-        }
+        application.initialize();
     }
 }

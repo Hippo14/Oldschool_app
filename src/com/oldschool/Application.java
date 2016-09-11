@@ -58,12 +58,13 @@ public class Application {
     private int constant;
 
     Class clazz;
+    private boolean running = true;
 
     public Application() {
 
     }
 
-    public void initialize() throws Exception {
+    public void initialize() {
 
 //        http://stackoverflow.com/questions/1448858/how-to-color-system-out-println-output
 //        System.out.println((char)27 + "[31mThis text would show up red" + (char)27 + "[0m");
@@ -71,25 +72,68 @@ public class Application {
         // Init config.properties
         Config.init();
 
-        // Get Bmp file
-        file = getBmpFile();
+        try {
+            // Get Bmp file
+            file = getBmpFile();
+        } catch (Exception e) {
+            System.out.println("[ERROR] : " + e.getMessage());
+            e.printStackTrace();
+        }
 
-        // Choose option
-        chooseOption();
 
-        // Write Bmp file
-        writeBmp("_" + getName());
+        while (running) {
+            try {
+                // Choose option
+                chooseOption();
 
-        // Normalize
-        normalize();
+                // Write Bmp file
+                writeBmp("_" + getName());
 
-        // Write Bmp file
-        writeBmp("_normalize" + "_" + getName());
+                // Normalize
+                if (normalize())
+                    // Write Bmp file
+                    writeBmp("_normalize" + "_" + getName());
+
+                // Stop ?
+                doYouWantStop();
+            }
+            catch (BadImageSizeException e) {
+                System.out.println("[ERROR] : " + e.getMessage());
+                // Stop ?
+                doYouWantStop();
+            }
+            catch (BadImageTypeException e) {
+                System.out.println("[ERROR] : " + e.getMessage());
+                // Stop ?
+                doYouWantStop();
+            }
+            catch (UnknownFormatException e) {
+                System.out.println("[ERROR] : " + e.getMessage());
+                // Stop ?
+                doYouWantStop();
+            }
+            catch (Exception e) {
+                System.out.println("[ERROR] : " + e.getMessage());
+                e.printStackTrace();
+            }
+        }
     }
 
-    private void normalize() {
+    private void doYouWantStop() {
+        System.out.println(Config.get("wantStop"));
+
+        String line = input.next();
+
+        if (line.contains("Y") || line.contains("y") || line.contains("Yes") || line.contains("yes"))
+            running = false;
+    }
+
+    private boolean normalize() {
         Normalize normalize = new Normalize(file);
-        file = normalize.getFile();
+        if (normalize.getNormalization())
+            file = normalize.getFile();
+
+        return normalize.getNormalization();
     }
 
     private void writeBmp(String string) throws Exception {

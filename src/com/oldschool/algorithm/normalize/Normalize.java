@@ -14,6 +14,8 @@ public class Normalize {
     int min = 255;
     int max = 0;
 
+    boolean normalization = true;
+
     public Normalize(BmpFile file) {
         this.file = file;
 
@@ -24,9 +26,10 @@ public class Normalize {
         // Szukanie największej i najmniejszej wartości piksla
         if (file.getHeader().getBitsPerPixel() == Constants.BITS_24) {
             find(file.getImage().getReds(), file.getImage().getGreens(), file.getImage().getBlues());
+            normalize();
         }
-
-        normalize();
+        else
+            normalization = false;
     }
 
     private void normalize() {
@@ -91,5 +94,9 @@ public class Normalize {
 
     public BmpFile getFile() {
         return file;
+    }
+
+    public boolean getNormalization() {
+        return normalization;
     }
 }
