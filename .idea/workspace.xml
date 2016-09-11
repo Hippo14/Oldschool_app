@@ -6,15 +6,12 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="104e4393-8d7f-4c4f-9565-815d4da5e414" name="Default" comment="">
+    <list default="true" id="104e4393-8d7f-4c4f-9565-815d4da5e414" name="Default" comment="Repaired morphology">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/filters/FilterMaximum.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/filters/FilterMedian.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/filters/FilterMinimum.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/oldschool/algorithm/binary/morphology/Dilation.java" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/binary/morphology/Dilation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/oldschool/algorithm/binary/morphology/Erosion.java" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/binary/morphology/Erosion.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/oldschool/algorithm/binary/morphology/Morphology.java" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/binary/morphology/Morphology.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/histogram/Equalization.java" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/histogram/Equalization.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/histogram/Stretching.java" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/histogram/Stretching.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/histogram/Otsu.java" afterPath="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/histogram/Otsu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/oldschool/image/bitmap/BmpImage.java" afterPath="$PROJECT_DIR$/src/com/oldschool/image/bitmap/BmpImage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/oldschool/Application.java" afterPath="$PROJECT_DIR$/src/com/oldschool/Application.java" />
     </list>
     <ignored path="Oldschool_app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,37 +52,91 @@
     <favorites_list name="Oldschool_app" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Application.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/oldschool/Application.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="607">
-              <caret line="286" column="39" selection-start-line="286" selection-start-column="39" selection-end-line="286" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="docComment;class#Application#0" expanded="false" />
-                <element signature="method#Application#0;class#Application#0" expanded="false" />
-                <element signature="method#printError#0;class#Application#0" expanded="false" />
-                <element signature="method#filter#0;class#Application#0" expanded="false" />
-                <element signature="method#morfGrayscale#0;class#Application#0" expanded="false" />
-                <element signature="method#histogramRGB#0;class#Application#0" expanded="false" />
-                <element signature="method#arytmRGB#0;class#Application#0" expanded="false" />
-                <element signature="method#logicBinary#0;class#Application#0" expanded="false" />
-                <element signature="method#getFileFromPath#0;class#Application#0" expanded="false" />
-                <element signature="method#getBmpFile#0;class#Application#0" expanded="false" />
-                <element signature="method#getSecondBmpFile#0;class#Application#0" expanded="false" />
-                <element signature="method#getConstant#0;class#Application#0" expanded="false" />
-                <element signature="method#getNewWidth#0;class#Application#0" expanded="false" />
-                <element signature="method#getNewHeight#0;class#Application#0" expanded="false" />
-                <element signature="method#getNewXVector#0;class#Application#0" expanded="false" />
-                <element signature="method#getNewYVector#0;class#Application#0" expanded="false" />
-                <element signature="method#getDegree#0;class#Application#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="Application.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/com/oldschool/Application.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-22">
+                  <caret line="208" column="17" selection-start-line="208" selection-start-column="17" selection-end-line="208" selection-end-column="17" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="docComment;class#Application#0" expanded="false" />
+                    <element signature="method#Application#0;class#Application#0" expanded="false" />
+                    <element signature="method#printError#0;class#Application#0" expanded="false" />
+                    <element signature="method#morfGrayscale#0;class#Application#0" expanded="false" />
+                    <element signature="method#histogramRGB#0;class#Application#0" expanded="false" />
+                    <element signature="method#arytmRGB#0;class#Application#0" expanded="false" />
+                    <element signature="e#25155#25156#0" expanded="true" />
+                    <element signature="e#25186#25187#0" expanded="true" />
+                    <element signature="method#getFileFromPath#0;class#Application#0" expanded="false" />
+                    <element signature="method#getBmpFile#0;class#Application#0" expanded="false" />
+                    <element signature="method#getSecondBmpFile#0;class#Application#0" expanded="false" />
+                    <element signature="method#getConstant#0;class#Application#0" expanded="false" />
+                    <element signature="method#getNewWidth#0;class#Application#0" expanded="false" />
+                    <element signature="method#getNewHeight#0;class#Application#0" expanded="false" />
+                    <element signature="method#getNewXVector#0;class#Application#0" expanded="false" />
+                    <element signature="method#getNewYVector#0;class#Application#0" expanded="false" />
+                    <element signature="method#getDegree#0;class#Application#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="FilterMaximum.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/filters/FilterMaximum.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="357">
+                  <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="50" selection-end-column="40" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Filter.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/filters/Filter.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-51">
+                  <caret line="29" column="91" selection-start-line="27" selection-start-column="8" selection-end-line="29" selection-end-column="91" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="FilterMinimum.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/filters/FilterMinimum.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="479">
+                  <caret line="49" column="40" selection-start-line="49" selection-start-column="40" selection-end-line="49" selection-end-column="40" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="FilterMedian.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/filters/FilterMedian.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="488">
+                  <caret line="66" column="40" selection-start-line="66" selection-start-column="40" selection-end-line="66" selection-end-column="40" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -116,9 +167,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/binary/morph/Morphology.java" />
-        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/binary/morph/Erosion.java" />
-        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/morphology/MaskArray.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/normalize/morphology/Erosion.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/morphology/Dilation.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/morphology/Opening.java" />
@@ -158,7 +206,6 @@
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/Roots.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/Divide.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/rgb/arytm/MultiplicationConst.java" />
-        <option value="$PROJECT_DIR$/src/com/oldschool/Application.java" />
         <option value="$PROJECT_DIR$/config.properties" />
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/histogram/Equalization.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/histogram/Stretching.java" />
@@ -167,6 +214,10 @@
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/binary/morphology/Erosion.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/binary/morphology/Morphology.java" />
         <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/binary/morphology/Dilation.java" />
+        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/filters/FilterMaximum.java" />
+        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/filters/FilterMinimum.java" />
+        <option value="$PROJECT_DIR$/src/com/oldschool/algorithm/filters/FilterMedian.java" />
+        <option value="$PROJECT_DIR$/src/com/oldschool/Application.java" />
       </list>
     </option>
   </component>
@@ -253,6 +304,72 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Oldschool_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Projekt_WPO" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Oldschool_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="oldschool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Projekt_WPO" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Oldschool_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="oldschool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algorithm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Projekt_WPO" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Oldschool_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="oldschool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algorithm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="filters" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -858,7 +975,7 @@
       <workItem from="1473468117181" duration="20000" />
       <workItem from="1473499930256" duration="13603000" />
       <workItem from="1473514890218" duration="8173000" />
-      <workItem from="1473585952392" duration="22357000" />
+      <workItem from="1473585952392" duration="24265000" />
     </task>
     <task id="LOCAL-00001" summary="v0.0.3&#10;- RGB arytm done">
       <created>1473405689592</created>
@@ -1000,11 +1117,18 @@
       <option name="project" value="LOCAL" />
       <updated>1473604506438</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Repaired morphology">
+      <created>1473609843251</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1473609843251</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112694000" />
+    <option name="totallyTimeSpent" value="114602000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1017,7 +1141,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42470205" sideWeight="0.5021322" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3488624" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3488624" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898468" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295519" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1093,7 +1217,8 @@
     <MESSAGE value="Refactoring menu" />
     <MESSAGE value="Refactoring" />
     <MESSAGE value="Refactoring and repairs some arythmetics bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring and repairs some arythmetics bugs" />
+    <MESSAGE value="Repaired morphology" />
+    <option name="LAST_COMMIT_MESSAGE" value="Repaired morphology" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1138,55 +1263,11 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/binary/morphology/Opening.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#681#682#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/morphology/Closing.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="58" selection-start-line="22" selection-start-column="58" selection-end-line="22" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#732#733#0" expanded="false" />
-            <element signature="e#759#760#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/grayscale/morphology/Opening.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#759#760#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/filters/FilterList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/filters/Filter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1468,8 +1549,8 @@
         <state relative-caret-position="750">
           <caret line="76" column="17" selection-start-line="76" selection-start-column="17" selection-end-line="76" selection-end-column="17" />
           <folding>
-            <element signature="e#2054#2055#0" expanded="true" />
-            <element signature="e#2086#2087#0" expanded="true" />
+            <element signature="e#2054#2055#0" expanded="false" />
+            <element signature="e#2086#2087#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1521,7 +1602,7 @@
         <state relative-caret-position="340">
           <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
           <folding>
-            <element signature="e#681#682#0" expanded="true" />
+            <element signature="e#681#682#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1566,20 +1647,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/filters/FilterMinimum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="479">
+          <caret line="49" column="40" selection-start-line="49" selection-start-column="40" selection-end-line="49" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/filters/FilterMaximum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="50" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/filters/FilterMedian.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="66" column="40" selection-start-line="66" selection-start-column="40" selection-end-line="66" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oldschool/algorithm/filters/Filter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51">
+          <caret line="29" column="91" selection-start-line="27" selection-start-column="8" selection-end-line="29" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/oldschool/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="607">
-          <caret line="286" column="39" selection-start-line="286" selection-start-column="39" selection-end-line="286" selection-end-column="39" />
+        <state relative-caret-position="-22">
+          <caret line="208" column="17" selection-start-line="208" selection-start-column="17" selection-end-line="208" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#Application#0" expanded="false" />
             <element signature="method#Application#0;class#Application#0" expanded="false" />
             <element signature="method#printError#0;class#Application#0" expanded="false" />
-            <element signature="method#filter#0;class#Application#0" expanded="false" />
             <element signature="method#morfGrayscale#0;class#Application#0" expanded="false" />
             <element signature="method#histogramRGB#0;class#Application#0" expanded="false" />
             <element signature="method#arytmRGB#0;class#Application#0" expanded="false" />
-            <element signature="method#logicBinary#0;class#Application#0" expanded="false" />
+            <element signature="e#25155#25156#0" expanded="true" />
+            <element signature="e#25186#25187#0" expanded="true" />
             <element signature="method#getFileFromPath#0;class#Application#0" expanded="false" />
             <element signature="method#getBmpFile#0;class#Application#0" expanded="false" />
             <element signature="method#getSecondBmpFile#0;class#Application#0" expanded="false" />

@@ -7,8 +7,7 @@ import com.oldschool.algorithm.binary.morphology.Dilation;
 import com.oldschool.algorithm.binary.morphology.Erosion;
 import com.oldschool.algorithm.binary.morphology.Morphology;
 import com.oldschool.algorithm.binary.morphology.Opening;
-import com.oldschool.algorithm.filters.Filter;
-import com.oldschool.algorithm.filters.FilterList;
+import com.oldschool.algorithm.filters.*;
 import com.oldschool.algorithm.geomet.Transform;
 import com.oldschool.algorithm.grayscale.arytm.Divide;
 import com.oldschool.algorithm.grayscale.arytm.DivideConst;
@@ -207,33 +206,139 @@ public class Application {
         }
     }
 
-    private void filter() throws NoSuchMethodException, IllegalAccessException, BadImageTypeException, InvocationTargetException {
-        Class c = FilterList.class;
-        int i = 1;
-        List<String> methodNames = new ArrayList<>();
-
-        // Find all methods in FilterList.class
-        for (Method method : c.getDeclaredMethods()) {
-            System.out.println(i++ + ". " + method.getName());
-            methodNames.add(method.getName());
-        }
-
+    private void filter() throws Exception {
+        System.out.println(Config.get("menu91"));
+        System.out.println(Config.get("menu92"));
+        System.out.println(Config.get("menu93"));
+        System.out.println(Config.get("menu94"));
         System.out.println(Config.get("menuBack"));
-
-        // Choose option
         System.out.print(Config.get("menuWybierzOpcje"));
         option = input.nextInt();
 
-        if (option == 0) {
-            choose();
-            return;
+        switch (option) {
+            case 1:
+                Class c = FilterList.class;
+                int i = 1;
+                List<String> methodNames = new ArrayList<>();
+
+                // Find all methods in FilterList.class
+                for (Method method : c.getDeclaredMethods()) {
+                    System.out.println(i++ + ". " + method.getName());
+                    methodNames.add(method.getName());
+                }
+
+                System.out.println(Config.get("menuBack"));
+
+                // Choose option
+                System.out.print(Config.get("menuWybierzOpcje"));
+                option = input.nextInt();
+
+                if (option == 0) {
+                    choose();
+                    return;
+                }
+
+                // Initialize chosen method from FilterList.class
+                FilterList filterList = new FilterList(file, methodNames.get(option + 1));
+                file = filterList.getFile();
+
+                this.clazz = filterList.getClass();
+
+//                Class c = FilterList.class;
+//
+//                List<String> methodNames = new ArrayList<>();
+//
+//                // Find all methods in FilterList.class
+//                for (Method method : c.getDeclaredMethods()) {
+//                    methodNames.add(method.getName());
+//                }
+//
+//                BmpFile tempFile = this.file;
+//
+//                for (Method method : c.getDeclaredMethods()) {
+//                    FilterList filterList = new FilterList(file, method.getName());
+//                    file = filterList.getFile();
+//                    this.clazz = filterList.getClass();
+//                    writeBmp(method.getName() + "_");
+//                    normalize();
+//                    writeBmp(method.getName() + "_normalize");
+//                    this.file = tempFile;
+//                }
+                break;
+            case 2:
+                FilterMaximum filterMaximum = new FilterMaximum(file);
+                file = filterMaximum.getFile();
+                this.clazz = filterMaximum.getClass();
+                break;
+            case 3:
+                FilterMinimum filterMinimum = new FilterMinimum(file);
+                file = filterMinimum.getFile();
+                this.clazz = filterMinimum.getClass();
+                break;
+            case 4:
+                FilterMedian filterMedian = new FilterMedian(file);
+                file = filterMedian.getFile();
+                this.clazz = filterMedian.getClass();
+                break;
+            case 0:
+                choose();
+                return;
         }
 
-        // Initialize chosen method from FilterList.class
-        FilterList filterList = new FilterList(file, methodNames.get(option + 1));
-        file = filterList.getFile();
 
-        this.clazz = filterList.getClass();
+
+
+//        Class c = FilterList.class;
+//
+//        List<String> methodNames = new ArrayList<>();
+//
+//        // Find all methods in FilterList.class
+//        for (Method method : c.getDeclaredMethods()) {
+//            methodNames.add(method.getName());
+//        }
+//
+//        BmpFile tempFile = this.file;
+//
+//        for (Method method : c.getDeclaredMethods()) {
+//            FilterList filterList = new FilterList(file, method.getName());
+//            file = filterList.getFile();
+//            this.clazz = filterList.getClass();
+//            writeBmp(method.getName() + "_");
+//            normalize();
+//            writeBmp(method.getName() + "_normalize");
+//            this.file = tempFile;
+//        }
+
+
+
+
+
+//        Class c = FilterList.class;
+//        int i = 1;
+//        List<String> methodNames = new ArrayList<>();
+//
+//        // Find all methods in FilterList.class
+//        for (Method method : c.getDeclaredMethods()) {
+//            System.out.println(i++ + ". " + method.getName());
+//            methodNames.add(method.getName());
+//        }
+//
+//        System.out.println(Config.get("menuBack"));
+//
+//        // Choose option
+//        System.out.print(Config.get("menuWybierzOpcje"));
+//        option = input.nextInt();
+//
+//        if (option == 0) {
+//            choose();
+//            return;
+//        }
+//
+//        // Initialize chosen method from FilterList.class
+//        FilterList filterList = new FilterList(file, methodNames.get(option + 1));
+//        file = filterList.getFile();
+//
+//        this.clazz = filterList.getClass();
     }
 
     private void morfGrayscale() throws IOException, BadImageTypeException {
