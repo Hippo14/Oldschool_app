@@ -317,6 +317,9 @@ public class Application {
         System.out.println(Config.get("menu42"));
         System.out.println(Config.get("menu43"));
         System.out.println(Config.get("menu44"));
+        System.out.println(Config.get("menu45"));
+        System.out.println(Config.get("menu46"));
+        System.out.println(Config.get("menu47"));
         System.out.print(Config.get("menuWybierzOpcje"));
         option = input.nextInt();
 
@@ -325,24 +328,32 @@ public class Application {
 
         switch (option) {
             case 1:
-                x = getConstant();
-                y = getConstant();
+                x = getNewXVector();
+                y = getNewYVector();
                 file = transform.moveImage(x, y);
-                break;
+            break;
             case 2:
-                System.out.println("Podaj rozmiary nowego obrazka:");
-                x = getConstant();
-                y = getConstant();
-                transform.scaleImage(x, y);
-                break;
+
+            break;
             case 3:
-                int degree= getConstant();
-                file = transform.rotateImage(degree);
-                break;
+                System.out.println(Config.get("newSize"));
+                x = getNewWidth();
+                y = getNewHeight();
+                transform.scaleImage(x, y);
+            break;
             case 4:
-                break;
+                int degree= getDegree();
+                file = transform.rotateImage(degree);
+            break;
             case 5:
-                break;
+                file = transform.symmetryImageOX();
+            break;
+            case 6:
+                file = transform.symmetryImageOY();
+            break;
+            case 7:
+                file = transform.symmetryImageOXOY();
+            break;
         }
         clazz = transform.getClass();
     }
@@ -554,8 +565,33 @@ public class Application {
         return input.nextInt();
     }
 
+    public int getNewWidth() {
+        System.out.println(Config.get("newWidth"));
+        return input.nextInt();
+    }
+
+    public int getNewHeight() {
+        System.out.println(Config.get("newHeight"));
+        return input.nextInt();
+    }
+
     public String getName() {
         String string = clazz.getName();
         return string.replace("com.oldschool.algorithm", "").replace(".", "_");
+    }
+
+    public int getNewXVector() {
+        System.out.println(Config.get("newXVector"));
+        return input.nextInt();
+    }
+
+    public int getNewYVector() {
+        System.out.println(Config.get("newYVector"));
+        return input.nextInt();
+    }
+
+    public int getDegree() {
+        System.out.println(Config.get("degree"));
+        return input.nextInt();
     }
 }

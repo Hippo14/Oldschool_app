@@ -35,10 +35,6 @@ public class Transform {
     }
 
     public BmpFile scaleImage(int newWidth, int newHeight) {
-//        int[][] reds = newMatrix(file.getHeader().getWidth(), file.getHeader().getHeight());
-//        int[][] greens = newMatrix(file.getHeader().getWidth(), file.getHeader().getHeight());
-//        int[][] blues = newMatrix(file.getHeader().getWidth(), file.getHeader().getHeight());
-
         int[][] reds = newMatrix(newWidth, newHeight);
         int[][] greens = newMatrix(newWidth, newHeight);
         int[][] blues = newMatrix(newWidth, newHeight);
@@ -115,4 +111,78 @@ public class Transform {
         return matrix;
     }
 
+    public BmpFile symmetryImageOXOY() {
+        int[][] reds = newMatrix(file.getHeader().getWidth(), file.getHeader().getHeight());
+        int[][] greens = newMatrix(file.getHeader().getWidth(), file.getHeader().getHeight());
+        int[][] blues = newMatrix(file.getHeader().getWidth(), file.getHeader().getHeight());
+
+        int width = file.getHeader().getWidth() - 1;
+
+        for (int x = 0; x < file.getHeader().getWidth(); x++) {
+            int height = file.getHeader().getHeight() - 1;
+            for (int y = 0; y < file.getHeader().getHeight(); y++) {
+                reds[x][y] = file.getImage().getRed(width, height);
+                greens[x][y] = file.getImage().getGreen(width, height);
+                blues[x][y] = file.getImage().getBlue(width, height);
+
+                height--;
+            }
+            width--;
+        }
+        file.getImage().setReds(reds);
+        file.getImage().setGreens(greens);
+        file.getImage().setBlues(blues);
+
+        return file;
+    }
+
+    public BmpFile symmetryImageOY() {
+        int[][] reds = newMatrix(file.getHeader().getWidth(), file.getHeader().getHeight());
+        int[][] greens = newMatrix(file.getHeader().getWidth(), file.getHeader().getHeight());
+        int[][] blues = newMatrix(file.getHeader().getWidth(), file.getHeader().getHeight());
+
+        int width = file.getHeader().getWidth() - 1;
+
+        for (int x = 0; x < file.getHeader().getWidth(); x++) {
+            for (int y = 0; y < file.getHeader().getHeight(); y++) {
+                reds[x][y] = file.getImage().getRed(width, y);
+                greens[x][y] = file.getImage().getGreen(width, y);
+                blues[x][y] = file.getImage().getBlue(width, y);
+            }
+            width--;
+        }
+
+        file.getImage().setReds(reds);
+        file.getImage().setGreens(greens);
+        file.getImage().setBlues(blues);
+
+        return file;
+    }
+
+    public BmpFile symmetryImageOX() {
+        int[][] reds = newMatrix(file.getHeader().getWidth(), file.getHeader().getHeight());
+        int[][] greens = newMatrix(file.getHeader().getWidth(), file.getHeader().getHeight());
+        int[][] blues = newMatrix(file.getHeader().getWidth(), file.getHeader().getHeight());
+
+        for (int x = 0; x < file.getHeader().getWidth(); x++) {
+            int height = file.getHeader().getHeight() - 1;
+            for (int y = 0; y < file.getHeader().getHeight(); y++) {
+                reds[x][y] = file.getImage().getRed(x, height);
+                greens[x][y] = file.getImage().getGreen(x, height);
+                blues[x][y] = file.getImage().getBlue(x, height);
+
+                height--;
+            }
+        }
+
+        file.getImage().setReds(reds);
+        file.getImage().setGreens(greens);
+        file.getImage().setBlues(blues);
+
+        return file;
+    }
+
+    public BmpFile getFile() {
+        return file;
+    }
 }
