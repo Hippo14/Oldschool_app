@@ -18,6 +18,7 @@ public class FilterList extends Filter {
 
         method = this.getClass().getMethod(name);
         arrayMask = (Integer[][]) method.invoke(this);
+        maskSize = arrayMask.length;
 
         run();
     }

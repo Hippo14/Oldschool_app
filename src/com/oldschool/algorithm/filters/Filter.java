@@ -41,11 +41,9 @@ public abstract class Filter {
                 for (int i = x - (maskSize / 2); i <= x + (maskSize / 2); i++) {
                     l = 0;
                     for (int j = y - (maskSize / 2); j <= y + (maskSize / 2); j++) {
-                        try {
-                            sR = sR + (file.getImage().getRed(i, j) * arrayMask[k][l]);
-                            sG = sG + (file.getImage().getRed(i, j) * arrayMask[k][l]);
-                            sB = sB + (file.getImage().getRed(i, j) * arrayMask[k][l]);
-                        } catch (Exception e) { }
+                        sR = sR + (file.getImage().getRed(i, j) * arrayMask[k][l]);
+                        sG = sG + (file.getImage().getGreen(i, j) * arrayMask[k][l]);
+                        sB = sB + (file.getImage().getBlue(i, j) * arrayMask[k][l]);
                         l++;
                     }
                     k++;
