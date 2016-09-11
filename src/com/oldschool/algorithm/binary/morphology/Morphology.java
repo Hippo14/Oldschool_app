@@ -22,39 +22,29 @@ public abstract class Morphology {
     }
 
     public void run() {
-        for (int x = 0; x < file.getHeader().getHeight(); x++) {
-            for (int y = 0; y < file.getHeader().getWidth(); y++) {
-                try {
-                    MaskArray mask = new MaskArray(2 * size + 1);
-                    Integer[][] maskArray = mask.getMaskArray();
-                    int sum = file.getImage().getBit(x, y);
-                    int k, l;
+        int[][] oldBits = file.getImage().getBits();
+        int[][] newBits = new int[file.getHeader().getWidth()][file.getHeader().getWidth()];
 
-                    for (int i = x - size; i < x + size; i++) {
-                        k = 0;
-                        l = 0;
-                        for (int j = y - size; j < y + size; j++) {
-                            if ((i >= 0 && j >= 0) && (i < file.getHeader().getHeight() && j < file.getHeader().getWidth())) {
-                                try {
-                                    sum = makeAlgorithm(i, j, k, l, sum, maskArray);
-                                } catch (Exception e) {
+        for (int x = 0; x < oldBits.length; x++) {
+            for (int y = 0; y < oldBits[x].length; y++) {
+                int result = oldBits[x][y];
 
-                                }
-                                l++;
-                            }
-                        }
-                        k++;
+                for (int i = x - size; i < x + size; i++) {
+                    for (int j = y - size; j < y + size; j++) {
+                        try {
+                            result = makeAlgorithm(i, j, result);
+                        } catch (Exception e) {}
                     }
-
-                    file.getImage().setBit(sum, x, y);
-                } catch (Exception e) {
-
                 }
+
+                newBits[x][y] = result;
             }
         }
+        file.getImage().setBits(newBits);
     }
 
-    public abstract int makeAlgorithm(int i, int j, int k, int l, int sum, Integer[][] maskArray);
+//    public abstract int makeAlgorithm(int i, int j, int k, int l, int sum, Integer[][] maskArray);
+    public abstract int makeAlgorithm(int i, int j, int sum);
 
     public BmpFile getFile() {
         return file;

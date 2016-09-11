@@ -13,6 +13,8 @@ public class Equalization extends Histogram {
     public Equalization(BmpFile file) throws IOException, BadImageTypeException {
         super(file);
 
+        histogram();
+
         init();
     }
 

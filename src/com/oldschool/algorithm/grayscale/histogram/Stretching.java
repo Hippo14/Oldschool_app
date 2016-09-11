@@ -12,6 +12,8 @@ public class Stretching extends Histogram {
     public Stretching(BmpFile file) throws IOException, BadImageTypeException {
         super(file);
 
+        histogram();
+
         init();
     }
 

@@ -158,4 +158,12 @@ public class BmpImage {
     public void createBit() {
         bit = new int[width][height];
     }
+
+    public int[][] getBits() {
+        return bit;
+    }
+
+    public void setBits(int[][] bits) {
+        this.bit = bits;
+    }
 }

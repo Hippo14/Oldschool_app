@@ -13,9 +13,9 @@ public class Erosion extends Morphology {
     }
 
     @Override
-    public int makeAlgorithm(int i, int j, int k, int l, int sum, Integer[][] maskArray) {
+    public int makeAlgorithm(int i, int j, int sum) {
         int center = sum;
-        if ((maskArray[k][l] & file.getImage().getRed(i, j)) == 1) {
+        if ((1 & file.getImage().getBit(i, j)) == 1) {
             center = 1;
         }
         return center;

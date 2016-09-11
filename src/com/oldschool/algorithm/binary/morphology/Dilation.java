@@ -16,9 +16,9 @@ public class Dilation extends Morphology {
     }
 
     @Override
-    public int makeAlgorithm(int i, int j, int k, int l, int sum, Integer[][] maskArray) {
+    public int makeAlgorithm(int i, int j, int sum) {
         int center = sum;
-        if ((maskArray[k][l] & file.getImage().getRed(i, j)) == 0) {
+        if ((1 & file.getImage().getBit(i, j)) == 0) {
             center = 0;
         }
         return center;

@@ -5,6 +5,8 @@ import com.oldschool.algorithm.utils.Convert;
 import com.oldschool.image.bitmap.BmpFile;
 import com.oldschool.image.bitmap.exception.BadImageTypeException;
 
+import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 /**
@@ -15,23 +17,30 @@ public class Otsu extends RGBHistogram {
     public Otsu(BmpFile file) throws IOException, BadImageTypeException {
         super(file);
 
+        histogram();
+
         init();
     }
 
     @Override
     void init() throws IOException, BadImageTypeException {
+        this.file = binarize(file);
+    }
+
+    private BmpFile binarize(BmpFile file) throws IOException, BadImageTypeException {
         int bin;
         int newPixel;
 
-        int t = otsuThreshold(file);
-        file = Convert.convertToGrayscale(file);
+        int threshold = otsuThreshold(file);
+
+        file = Convert.convertToBinare(file);
         file.getImage().createBit();
 
         for (int x = 0; x < file.getHeader().getWidth(); x++) {
             for (int y = 0; y < file.getHeader().getHeight(); y++) {
                 bin = file.getImage().getRed(x, y);
 
-                if (bin > t)
+                if (bin > threshold)
                     newPixel = 1;
                 else
                     newPixel = 0;
@@ -40,12 +49,13 @@ public class Otsu extends RGBHistogram {
             }
         }
 
-        file = Convert.convertToBinare(file);
+        return file;
     }
 
     private int otsuThreshold(BmpFile file) throws IOException, BadImageTypeException {
-        Histogram grayHist = new Histogram(file);
-        int[] histogram = grayHist.getHistogram();
+        Histogram grayHistogram = new Histogram(file);
+        grayHistogram.histogram();
+        int[] histogram = grayHistogram.getHistogram();
         int total = file.getHeader().getWidth() * file.getHeader().getHeight();
 
         float sum = 0;
@@ -62,7 +72,7 @@ public class Otsu extends RGBHistogram {
         for (int i = 0; i < 256; i++) {
             wB += histogram[i];
             if (wB == 0)
-                continue;;
+                continue;
             wF = total - wB;
 
             if (wF == 0)
@@ -81,4 +91,5 @@ public class Otsu extends RGBHistogram {
         }
         return threshold;
     }
+
 }
