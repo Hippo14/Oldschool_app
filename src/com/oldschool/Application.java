@@ -211,6 +211,8 @@ public class Application {
         System.out.println(Config.get("menu92"));
         System.out.println(Config.get("menu93"));
         System.out.println(Config.get("menu94"));
+        System.out.println(Config.get("menu95"));
+        System.out.println(Config.get("menu96"));
         System.out.println(Config.get("menuBack"));
         System.out.print(Config.get("menuWybierzOpcje"));
         option = input.nextInt();
@@ -247,7 +249,7 @@ public class Application {
     }
 
     private void gradient() throws NoSuchMethodException, IllegalAccessException, BadImageTypeException, InvocationTargetException {
-        System.out.println(Config.get("menu911"));
+        System.out.println(Config.get("menu931"));
         System.out.println(Config.get("menu932"));
         System.out.println(Config.get("menu933"));
         System.out.println(Config.get("menu934"));
