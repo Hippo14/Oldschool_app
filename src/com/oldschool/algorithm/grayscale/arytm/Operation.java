@@ -1,5 +1,6 @@
 package com.oldschool.algorithm.grayscale.arytm;
 
+import com.oldschool.algorithm.utils.Config;
 import com.oldschool.algorithm.utils.Convert;
 import com.oldschool.image.Pixel;
 import com.oldschool.image.bitmap.BmpFile;
@@ -19,6 +20,8 @@ abstract public class Operation {
     public Operation(BmpFile file, int constant) throws IOException, BadImageTypeException {
         this.constant = constant;
 
+        if (!file.getHeader().getGrayscale() || !file.getHeader().getRGB())
+            throw new BadImageTypeException(Config.get("bit_bad_image"));
         if (!file.getHeader().getGrayscale())
             this.file = Convert.convertToGrayscale(file);
         else
@@ -28,11 +31,15 @@ abstract public class Operation {
     }
 
     public Operation(BmpFile file, BmpFile secondFile) throws IOException, BadImageTypeException {
+        if (!file.getHeader().getGrayscale() || !file.getHeader().getRGB())
+            throw new BadImageTypeException(Config.get("bit_bad_image"));
         if (!file.getHeader().getGrayscale())
             this.file = Convert.convertToGrayscale(file);
         else
             this.file = file;
 
+        if (!secondFile.getHeader().getGrayscale() || !secondFile.getHeader().getRGB())
+            throw new BadImageTypeException(Config.get("bit_bad_image"));
         if (!secondFile.getHeader().getGrayscale())
             this.secondFile = Convert.convertToGrayscale(secondFile);
         else
@@ -42,6 +49,8 @@ abstract public class Operation {
     }
 
     public Operation(BmpFile file) throws IOException, BadImageTypeException {
+        if (!file.getHeader().getGrayscale() || !file.getHeader().getRGB())
+            throw new BadImageTypeException(Config.get("bit_bad_image"));
         if (!file.getHeader().getGrayscale())
             this.file = Convert.convertToGrayscale(file);
         else

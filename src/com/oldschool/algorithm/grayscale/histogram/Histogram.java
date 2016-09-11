@@ -1,5 +1,6 @@
 package com.oldschool.algorithm.grayscale.histogram;
 
+import com.oldschool.algorithm.utils.Config;
 import com.oldschool.algorithm.utils.Convert;
 import com.oldschool.image.bitmap.BmpFile;
 import com.oldschool.image.bitmap.exception.BadImageTypeException;
@@ -18,6 +19,8 @@ public class Histogram {
     int[] histogram = new int[256];
 
     public Histogram(BmpFile file) throws IOException, BadImageTypeException {
+        if (!file.getHeader().getGrayscale() || !file.getHeader().getRGB())
+            throw new BadImageTypeException(Config.get("bit_bad_image"));
         if (!file.getHeader().getGrayscale())
             this.file = Convert.convertToGrayscale(file);
         else

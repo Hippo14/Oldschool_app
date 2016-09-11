@@ -1,5 +1,6 @@
 package com.oldschool.algorithm.grayscale.morphology;
 
+import com.oldschool.algorithm.utils.Config;
 import com.oldschool.algorithm.utils.Convert;
 import com.oldschool.image.bitmap.BmpFile;
 import com.oldschool.image.bitmap.exception.BadImageTypeException;
@@ -15,6 +16,8 @@ public abstract class Morphology {
     private int size = 3;
 
     public Morphology(BmpFile file) throws BadImageTypeException, IOException {
+        if (!file.getHeader().getGrayscale() || !file.getHeader().getRGB())
+            throw new BadImageTypeException(Config.get("bit_bad_image"));
         if (!file.getHeader().getGrayscale())
             this.file = Convert.convertToGrayscale(file);
         else
