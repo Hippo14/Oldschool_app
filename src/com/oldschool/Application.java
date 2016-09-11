@@ -59,6 +59,7 @@ public class Application {
 
     Class clazz;
     private boolean running = true;
+    private boolean choosen = true;
 
     public Application() {
 
@@ -76,7 +77,7 @@ public class Application {
             // Get Bmp file
             file = getBmpFile();
         } catch (Exception e) {
-            System.out.println("[ERROR] : " + e.getMessage());
+            printError(e.getMessage());
             e.printStackTrace();
         }
 
@@ -86,41 +87,48 @@ public class Application {
                 // Choose option
                 chooseOption();
 
+                if (choosen)
                 // Write Bmp file
                 writeBmp("_" + getName());
 
                 // Normalize
-                if (normalize())
+                if (choosen && normalize())
                     // Write Bmp file
                     writeBmp("_normalize" + "_" + getName());
 
-                // Stop ?
-                doYouWantStop();
+                if (choosen)
+                    // Stop ?
+                    doYouWantStop();
+                choosen = true;
             }
             catch (BadImageSizeException e) {
-                System.out.println("[ERROR] : " + e.getMessage());
+                printError(e.getMessage());
                 // Stop ?
                 doYouWantStop();
             }
             catch (BadImageTypeException e) {
-                System.out.println("[ERROR] : " + e.getMessage());
+                printError(e.getMessage());
                 // Stop ?
                 doYouWantStop();
             }
             catch (UnknownFormatException e) {
-                System.out.println("[ERROR] : " + e.getMessage());
+                printError(e.getMessage());
                 // Stop ?
                 doYouWantStop();
             }
             catch (Exception e) {
-                System.out.println("[ERROR] : " + e.getMessage());
+                printError(e.getMessage());
                 e.printStackTrace();
             }
         }
     }
 
+    private void printError(String message) {
+        System.out.println("[ERROR] : " + (char)27 + "[30;41m" + message + (char)27 + "[0m");
+    }
+
     private void doYouWantStop() {
-        System.out.println(Config.get("wantStop"));
+        System.out.println(Config.get("wantStop") + (char)27 + "[32m" + "(Y)es / (N)o" + (char)27 + "[0m");
 
         String line = input.next();
 
@@ -151,6 +159,8 @@ public class Application {
     }
 
     private void chooseOption() throws Exception {
+        cls();
+
         System.out.println("....");
         System.out.println(Config.get("menu1"));
         System.out.println(Config.get("menu2"));
@@ -161,6 +171,7 @@ public class Application {
         System.out.println(Config.get("menu7"));
         System.out.println(Config.get("menu8"));
         System.out.println(Config.get("menu9"));
+        System.out.println(Config.get("menu0"));
         System.out.print(Config.get("menuWybierzOpcje"));
 
         option = input.nextInt();
@@ -195,12 +206,15 @@ public class Application {
             case 9:
                 filter();
             break;
+            case 0:
+                System.exit(0);
+            break;
         }
     }
 
     private void filter() throws NoSuchMethodException, IllegalAccessException, BadImageTypeException, InvocationTargetException {
         Class c = FilterList.class;
-        int i = 0;
+        int i = 1;
         List<String> methodNames = new ArrayList<>();
 
         // Find all methods in FilterList.class
@@ -209,14 +223,19 @@ public class Application {
             methodNames.add(method.getName());
         }
 
+        System.out.println(Config.get("menuBack"));
+
         // Choose option
         System.out.print(Config.get("menuWybierzOpcje"));
         option = input.nextInt();
 
-//        Collections.sort(methodNames);
+        if (option == 0) {
+            choose();
+            return;
+        }
 
         // Initialize chosen method from FilterList.class
-        FilterList filterList = new FilterList(file, methodNames.get(option));
+        FilterList filterList = new FilterList(file, methodNames.get(option + 1));
         file = filterList.getFile();
 
         this.clazz = filterList.getClass();
@@ -227,6 +246,7 @@ public class Application {
         System.out.println(Config.get("menu82"));
         System.out.println(Config.get("menu83"));
         System.out.println(Config.get("menu84"));
+        System.out.println(Config.get("menuBack"));
         System.out.print(Config.get("menuWybierzOpcje"));
         option = input.nextInt();
 
@@ -252,6 +272,9 @@ public class Application {
                 this.file = closing.getFile();
                 clazz = closing.getClass();
                 break;
+            case 0:
+                choose();
+                return;
         }
     }
 
@@ -260,6 +283,7 @@ public class Application {
         System.out.println(Config.get("menu82"));
         System.out.println(Config.get("menu83"));
         System.out.println(Config.get("menu84"));
+        System.out.println(Config.get("menuBack"));
         System.out.print(Config.get("menuWybierzOpcje"));
         option = input.nextInt();
 
@@ -284,6 +308,9 @@ public class Application {
                 this.file = closing.getFile();
                 clazz = closing.getClass();
             break;
+            case 0:
+                choose();
+                return;
         }
     }
 
@@ -293,6 +320,7 @@ public class Application {
         System.out.println(Config.get("menu53"));
         System.out.println(Config.get("menu64"));
         System.out.println(Config.get("menu65"));
+        System.out.println(Config.get("menuBack"));
         System.out.print(Config.get("menuWybierzOpcje"));
         option = input.nextInt();
 
@@ -322,6 +350,9 @@ public class Application {
                 histogram = new Otsu(file);
                 file = histogram.getFile();
             break;
+            case 0:
+                choose();
+                return;
         }
         histogram.toTextFile(path);
         clazz = histogram.getClass();
@@ -331,6 +362,7 @@ public class Application {
         System.out.println(Config.get("menu51"));
         System.out.println(Config.get("menu52"));
         System.out.println(Config.get("menu53"));
+        System.out.println(Config.get("menuBack"));
         System.out.print(Config.get("menuWybierzOpcje"));
         option = input.nextInt();
 
@@ -351,6 +383,9 @@ public class Application {
                 histogram = new Stretching(file);
                 file = histogram.getFile();
             break;
+            case 0:
+                choose();
+                return;
         }
         histogram.toTextFile(path);
         clazz = histogram.getClass();
@@ -364,6 +399,7 @@ public class Application {
         System.out.println(Config.get("menu45"));
         System.out.println(Config.get("menu46"));
         System.out.println(Config.get("menu47"));
+        System.out.println(Config.get("menuBack"));;
         System.out.print(Config.get("menuWybierzOpcje"));
         option = input.nextInt();
 
@@ -398,6 +434,9 @@ public class Application {
             case 7:
                 file = transform.symmetryImageOXOY();
             break;
+            case 0:
+                choose();
+                return;
         }
         clazz = transform.getClass();
     }
@@ -412,6 +451,7 @@ public class Application {
         System.out.println(Config.get("menu27"));
         System.out.println(Config.get("menu28"));
         System.out.println(Config.get("menu29"));
+        System.out.println(Config.get("menuBack"));
         System.out.print(Config.get("menuWybierzOpcje"));
         option = input.nextInt();
 
@@ -461,6 +501,9 @@ public class Application {
                 operation = new com.oldschool.algorithm.rgb.arytm.Log(file);
                 file = operation.getFile();
             break;
+            case 0:
+                choose();
+                return;
         }
         clazz = operation.getClass();
     }
@@ -475,6 +518,7 @@ public class Application {
         System.out.println(Config.get("menu27"));
         System.out.println(Config.get("menu28"));
         System.out.println(Config.get("menu29"));
+        System.out.println(Config.get("menuBack"));
         System.out.print(Config.get("menuWybierzOpcje"));
         option = input.nextInt();
 
@@ -524,6 +568,9 @@ public class Application {
                 operation = new Log(file);
                 file = operation.getFile();
             break;
+            case 0:
+                choose();
+                return;
         }
         clazz = operation.getClass();
     }
@@ -533,6 +580,7 @@ public class Application {
         System.out.println(Config.get("menu12"));
         System.out.println(Config.get("menu13"));
         System.out.println(Config.get("menu14"));
+        System.out.println(Config.get("menuBack"));
         System.out.print(Config.get("menuWybierzOpcje"));
         option = input.nextInt();
 
@@ -558,8 +606,15 @@ public class Application {
                 logical = new XOR(file, secondFile);
                 file = logical.getFile();
             break;
+            case 0:
+                choose();
+                return;
         }
         clazz = logical.getClass();
+    }
+
+    private void choose() {
+        choosen = false;
     }
 
     private File getFileFromPath() throws IOException {
@@ -637,5 +692,11 @@ public class Application {
     public int getDegree() {
         System.out.println(Config.get("degree"));
         return input.nextInt();
+    }
+
+    public void cls() {
+
+
+        System.out.print("\033[H\033[2J");
     }
 }
