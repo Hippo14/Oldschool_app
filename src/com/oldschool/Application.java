@@ -9,6 +9,7 @@ import com.oldschool.algorithm.binary.morphology.Morphology;
 import com.oldschool.algorithm.binary.morphology.Opening;
 import com.oldschool.algorithm.filters.Filter;
 import com.oldschool.algorithm.filters.FilterList;
+import com.oldschool.algorithm.geomet.Transform;
 import com.oldschool.algorithm.grayscale.arytm.Divide;
 import com.oldschool.algorithm.grayscale.arytm.DivideConst;
 import com.oldschool.algorithm.grayscale.arytm.Exponentation;
@@ -312,7 +313,37 @@ public class Application {
     }
 
     private void geometr() {
+        System.out.println(Config.get("menu41"));
+        System.out.println(Config.get("menu42"));
+        System.out.println(Config.get("menu43"));
+        System.out.println(Config.get("menu44"));
+        System.out.print(Config.get("menuWybierzOpcje"));
+        option = input.nextInt();
 
+        Transform transform = new Transform(file);
+        int x,y;
+
+        switch (option) {
+            case 1:
+                x = getConstant();
+                y = getConstant();
+                file = transform.moveImage(x, y);
+                break;
+            case 2:
+                x = getConstant();
+                y = getConstant();
+                transform.scaleImage(x, y);
+                break;
+            case 3:
+                int degree= getConstant();
+                file = transform.rotateImage(degree);
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+        }
+        clazz = transform.getClass();
     }
 
     private void arytmRGB() throws BadImageSizeException, UnknownFormatException, BadImageTypeException, IOException, InterruptedException {
