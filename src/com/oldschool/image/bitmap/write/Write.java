@@ -59,10 +59,6 @@ public class Write {
 
         // Write image
         writeImage(input);
-
-        // TEST , 'Krzysztof Macioszek' in SHA-512
-        byte[] author = "4c701ab9fef083b8ea130642f68be0d0f15d53c9afb80d812a138cdb591943f70b3a4e6b2b619b6741784e7e907feb6df0f8b45e7af04fadbc468f98bc7da867".getBytes("UTF-8");
-        input.write(author);
     }
 
     private void writeImage(LitEndOutputStream input) throws IOException {

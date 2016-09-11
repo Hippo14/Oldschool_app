@@ -16,17 +16,20 @@ public class Divide extends Operation {
 
     @Override
     public void makeAlgorithm(int x, int y) {
-        int firstPixel = file.getImage().getRed(x, y);
+        double firstPixel = file.getImage().getRed(x, y);
+        double secondPixel = secondFile.getImage().getRed(x, y);
 
-        int secondPixel = secondFile.getImage().getValue(x, y);
+        double sum;
 
-        int sum = firstPixel;
-        if (secondPixel != 0)
+        if (secondPixel == 0)
+            sum = firstPixel;
+        else
             sum = firstPixel / secondPixel;
 
-        file.getImage().setRed(x, y, sum);
-        file.getImage().setGreen(x, y, sum);
-        file.getImage().setBlue(x, y, sum);
+
+        file.getImage().setRed(x, y, (int) (1.0 * sum));
+        file.getImage().setGreen(x, y, (int) (1.0 * sum));
+        file.getImage().setBlue(x, y, (int) (1.0 * sum));
     }
 
 }

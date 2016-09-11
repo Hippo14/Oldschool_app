@@ -73,17 +73,12 @@ public class Application {
         // Init config.properties
         Config.init();
 
-        try {
-            // Get Bmp file
-            file = getBmpFile();
-        } catch (Exception e) {
-            printError(e.getMessage());
-            e.printStackTrace();
-        }
-
 
         while (running) {
             try {
+                // Get Bmp file
+                file = getBmpFile();
+
                 // Choose option
                 chooseOption();
 
@@ -393,7 +388,6 @@ public class Application {
 
     private void geometr() {
         System.out.println(Config.get("menu41"));
-        System.out.println(Config.get("menu42"));
         System.out.println(Config.get("menu43"));
         System.out.println(Config.get("menu44"));
         System.out.println(Config.get("menu45"));
@@ -413,25 +407,22 @@ public class Application {
                 file = transform.moveImage(x, y);
             break;
             case 2:
-
-            break;
-            case 3:
                 System.out.println(Config.get("newSize"));
                 x = getNewWidth();
                 y = getNewHeight();
                 transform.scaleImage(x, y);
             break;
-            case 4:
+            case 3:
                 int degree= getDegree();
                 file = transform.rotateImage(degree);
             break;
-            case 5:
+            case 4:
                 file = transform.symmetryImageOX();
             break;
-            case 6:
+            case 5:
                 file = transform.symmetryImageOY();
             break;
-            case 7:
+            case 6:
                 file = transform.symmetryImageOXOY();
             break;
             case 0:

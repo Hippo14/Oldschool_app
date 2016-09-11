@@ -18,10 +18,8 @@ public class XOR extends Logical {
 
         int sum = (p & ~q) | (~p & q);
 
-        if (sum == 0)
-            file.getImage().setBit(1, x, y);
-        else
-            file.getImage().setBit(0, x, y);
+        file.getImage().setBit(sum, x, y);
+
     }
 
 }

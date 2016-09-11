@@ -15,10 +15,7 @@ public class Sum extends Logical{
     public void makeAlgorithm(int x, int y) {
         int sum = file.getImage().getBit(x, y) | secondFile.getImage().getBit(x, y);
 
-        if (sum == 0)
-            file.getImage().setBit(1, x, y);
-        else
-            file.getImage().setBit(0, x, y);
+        file.getImage().setBit(sum, x, y);
     }
 
 }

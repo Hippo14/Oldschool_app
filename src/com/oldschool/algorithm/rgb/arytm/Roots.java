@@ -16,17 +16,17 @@ public class Roots extends Operation {
 
     @Override
     public void makeAlgorithm(int x, int y) {
-        int firstRedPixel = file.getImage().getRed(x, y);
-        int firstGreenPixel = file.getImage().getGreen(x, y);
-        int firstBluePixel = file.getImage().getBlue(x, y);
+        double firstRedPixel = file.getImage().getRed(x, y);
+        double firstGreenPixel = file.getImage().getGreen(x, y);
+        double firstBluePixel = file.getImage().getBlue(x, y);
 
-        firstRedPixel = (int) Math.sqrt((double)firstRedPixel);
-        firstGreenPixel = (int) Math.sqrt((double)firstGreenPixel);
-        firstBluePixel = (int) Math.sqrt((double)firstBluePixel);
+        firstRedPixel = Math.sqrt(firstRedPixel);
+        firstGreenPixel = Math.sqrt(firstGreenPixel);
+        firstBluePixel = Math.sqrt(firstBluePixel);
 
-        file.getImage().setRed(x, y, firstRedPixel);
-        file.getImage().setGreen(x, y, firstGreenPixel);
-        file.getImage().setBlue(x, y, firstBluePixel);
+        file.getImage().setRed(x, y, (int) (1.0 * firstRedPixel));
+        file.getImage().setGreen(x, y, (int) (1.0 * firstGreenPixel));
+        file.getImage().setBlue(x, y, (int) (1.0 * firstBluePixel));
     }
 
 }

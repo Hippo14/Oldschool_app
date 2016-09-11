@@ -17,29 +17,35 @@ public class Divide extends Operation {
 
     @Override
     public void makeAlgorithm(int x, int y) {
-        int firstRedPixel = file.getImage().getRed(x, y);
-        int firstGreenPixel = file.getImage().getGreen(x, y);
-        int firstBluePixel = file.getImage().getBlue(x, y);
+        double firstRedPixel = file.getImage().getRed(x, y);
+        double firstGreenPixel = file.getImage().getGreen(x, y);
+        double firstBluePixel = file.getImage().getBlue(x, y);
 
-        int secondRedPixel = secondFile.getImage().getRed(x, y);
-        int secondGreenPixel = secondFile.getImage().getGreen(x, y);
-        int secondBluePixel = secondFile.getImage().getBlue(x, y);
+        double secondRedPixel = secondFile.getImage().getRed(x, y);
+        double secondGreenPixel = secondFile.getImage().getGreen(x, y);
+        double secondBluePixel = secondFile.getImage().getBlue(x, y);
 
-        int redSum = firstRedPixel;
-        if (secondRedPixel != 0)
+        double redSum;
+        if (secondRedPixel == 0)
+            redSum = firstRedPixel;
+        else
             redSum = firstRedPixel / secondRedPixel;
 
-        int greenSum = firstGreenPixel;
-        if (secondGreenPixel != 0)
+        double greenSum;
+        if (secondRedPixel == 0)
+            greenSum = firstGreenPixel;
+        else
             greenSum = firstGreenPixel / secondGreenPixel;
 
-        int blueSum = firstBluePixel;
-        if (secondBluePixel != 0)
+        double blueSum;
+        if (secondRedPixel == 0)
+            blueSum = firstBluePixel;
+        else
             blueSum = firstBluePixel / secondBluePixel;
 
-        file.getImage().setRed(x, y, redSum);
-        file.getImage().setGreen(x, y, greenSum);
-        file.getImage().setBlue(x, y, blueSum);
+        file.getImage().setRed(x, y, (int) (1.0 * redSum));
+        file.getImage().setGreen(x, y, (int) (1.0 * greenSum));
+        file.getImage().setBlue(x, y, (int) (1.0 * blueSum));
     }
 
 }

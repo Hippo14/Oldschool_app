@@ -20,41 +20,41 @@ abstract public class Operation {
     public Operation(BmpFile file, int constant) throws IOException, BadImageTypeException {
         this.constant = constant;
 
-        if (!file.getHeader().getGrayscale() || !file.getHeader().getRGB())
-            throw new BadImageTypeException(Config.get("bit_bad_image"));
-        if (!file.getHeader().getGrayscale())
+        if (file.getHeader().getRGB())
             this.file = Convert.convertToGrayscale(file);
-        else
+        else if (file.getHeader().getGrayscale())
             this.file = file;
+        else
+            throw new BadImageTypeException(Config.get("bit_bad_image"));
 
         run();
     }
 
     public Operation(BmpFile file, BmpFile secondFile) throws IOException, BadImageTypeException {
-        if (!file.getHeader().getGrayscale() || !file.getHeader().getRGB())
-            throw new BadImageTypeException(Config.get("bit_bad_image"));
-        if (!file.getHeader().getGrayscale())
+        if (file.getHeader().getRGB())
             this.file = Convert.convertToGrayscale(file);
-        else
+        else if (file.getHeader().getGrayscale())
             this.file = file;
-
-        if (!secondFile.getHeader().getGrayscale() || !secondFile.getHeader().getRGB())
-            throw new BadImageTypeException(Config.get("bit_bad_image"));
-        if (!secondFile.getHeader().getGrayscale())
-            this.secondFile = Convert.convertToGrayscale(secondFile);
         else
+            throw new BadImageTypeException(Config.get("bit_bad_image"));
+
+        if (secondFile.getHeader().getRGB())
+            this.secondFile = Convert.convertToGrayscale(secondFile);
+        else if (secondFile.getHeader().getGrayscale())
             this.secondFile = secondFile;
+        else
+            throw new BadImageTypeException(Config.get("bit_bad_image"));
 
         run();
     }
 
     public Operation(BmpFile file) throws IOException, BadImageTypeException {
-        if (!file.getHeader().getGrayscale() || !file.getHeader().getRGB())
-            throw new BadImageTypeException(Config.get("bit_bad_image"));
-        if (!file.getHeader().getGrayscale())
+        if (file.getHeader().getRGB())
             this.file = Convert.convertToGrayscale(file);
-        else
+        else if (file.getHeader().getGrayscale())
             this.file = file;
+        else
+            throw new BadImageTypeException(Config.get("bit_bad_image"));
 
         run();
     }

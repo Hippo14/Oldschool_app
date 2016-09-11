@@ -16,12 +16,12 @@ public abstract class Morphology {
     private int size = 3;
 
     public Morphology(BmpFile file) throws BadImageTypeException, IOException {
-        if (!file.getHeader().getGrayscale() || !file.getHeader().getRGB())
-            throw new BadImageTypeException(Config.get("bit_bad_image"));
-        if (!file.getHeader().getGrayscale())
+        if (file.getHeader().getRGB())
             this.file = Convert.convertToGrayscale(file);
-        else
+        else if (file.getHeader().getGrayscale())
             this.file = file;
+        else
+            throw new BadImageTypeException(Config.get("bit_bad_image"));
 
         run();
     }
