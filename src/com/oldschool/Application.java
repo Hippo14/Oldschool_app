@@ -27,12 +27,15 @@ import com.oldschool.algorithm.rgb.histogram.Otsu;
 import com.oldschool.algorithm.rgb.histogram.RGBHistogram;
 import com.oldschool.algorithm.rgb.histogram.Threeshold;
 import com.oldschool.algorithm.utils.Config;
+import com.oldschool.algorithm.utils.Convert;
 import com.oldschool.image.bitmap.BmpFile;
+import com.oldschool.image.bitmap.bits.Constants;
 import com.oldschool.image.bitmap.exception.BadImageSizeException;
 import com.oldschool.image.bitmap.exception.BadImageTypeException;
 import com.oldschool.image.bitmap.exception.UnknownFormatException;
 import com.oldschool.image.bitmap.read.Read;
 import com.oldschool.image.bitmap.write.Write;
+import com.sun.xml.internal.bind.v2.runtime.reflect.opt.Const;
 
 import javax.annotation.PostConstruct;
 import java.io.*;
@@ -60,6 +63,8 @@ public class Application {
     private boolean running = true;
     private boolean choosen = true;
 
+    int estimatedType = 0;
+
     public Application() {
 
     }
@@ -75,9 +80,6 @@ public class Application {
 
         while (running) {
             try {
-                // Get Bmp file
-                file = getBmpFile();
-
                 // Choose option
                 chooseOption();
 
@@ -170,34 +172,50 @@ public class Application {
 
         option = input.nextInt();
 
-        System.out.println(ANSI_CLS);
-
         switch (option) {
             case 1:
+                this.estimatedType = Constants.BITS_1;
+                file = getBmpFile();
                 logicBinary();
             break;
             case 2:
+                this.estimatedType = Constants.BITS_24_GRAYSCALE;
+                file = getBmpFile();
                 arytmGrayscale();
             break;
             case 3:
+                this.estimatedType = Constants.BITS_24;
+                file = getBmpFile();
                 arytmRGB();
             break;
             case 4:
+                this.estimatedType = 0;
+                file = getBmpFile();
                 geometr();
             break;
             case 5:
+                this.estimatedType = Constants.BITS_24_GRAYSCALE;
+                file = getBmpFile();
                 histogramGrayscale();
             break;
             case 6:
+                this.estimatedType = Constants.BITS_24;
+                file = getBmpFile();
                 histogramRGB();
             break;
             case 7:
+                this.estimatedType = Constants.BITS_1;
+                file = getBmpFile();
                 morfBinary();
             break;
             case 8:
+                this.estimatedType = Constants.BITS_24_GRAYSCALE;
+                file = getBmpFile();
                 morfGrayscale();
             break;
             case 9:
+                this.estimatedType = Constants.BITS_24;
+                file = getBmpFile();
                 filter();
             break;
             case 0:
@@ -734,26 +752,48 @@ public class Application {
         return f;
     }
 
-    private BmpFile getBmpFile() throws IOException, UnknownFormatException, InterruptedException {
-        File file = getFileFromPath();
-        sDir = file.toURI().getPath();
+    private BmpFile getBmpFile() throws IOException, UnknownFormatException, InterruptedException, BadImageTypeException {
+        File filePath = getFileFromPath();
+        sDir = filePath.toURI().getPath();
 
         DataInputStream dis = new DataInputStream(new FileInputStream(sDir));
         Read read = new Read(dis);
+        // Converse
+        converse(read.getBmpFile());
+
 
         return read.getBmpFile();
+    }
+
+    private void converse(BmpFile file) throws BadImageTypeException, IOException {
+        // Binarne
+        if (estimatedType == Constants.BITS_1) {
+            if (file.getHeader().getBitsPerPixel() != Constants.BITS_1) this.file = Convert.convertRGBToBin(file);
+        }
+        // Skala szarości
+        else if (estimatedType == Constants.BITS_24_GRAYSCALE) {
+            if (file.getHeader().getBitsPerPixel() == Constants.BITS_1) throw new BadImageTypeException(Config.get("bit_converse_gray_to_bin"));
+            if (file.getHeader().getBitsPerPixel() == Constants.BITS_24)
+                if (file.getHeader().getRGB()) file = Convert.convertToGrayscale(file);
+        }
+        // RGB
+        else if (estimatedType == Constants.BITS_24) {
+            if (file.getHeader().getBitsPerPixel() == Constants.BITS_1) throw new BadImageTypeException(Config.get("bit_converse_rgb_to_bin"));
+            if (file.getHeader().getGrayscale()) throw new BadImageTypeException(Config.get("bit_converse_rgb_to_gray"));
+        }
     }
 
     public BmpFile getSecondBmpFile() throws IOException, UnknownFormatException, BadImageTypeException, BadImageSizeException, InterruptedException {
         System.out.println(Config.get("pathToSecondFile"));
 
         BmpFile secondFile = getBmpFile();
+        // Converse
+//        converse(secondFile);
 
-        if (file.getHeader().getBitsPerPixel() != secondFile.getHeader().getBitsPerPixel())
-            throw new BadImageTypeException(Config.get("bit_exception_bin"));
-        if (file.getHeader().getWidth() != secondFile.getHeader().getWidth() ||
-                file.getHeader().getHeight() != secondFile.getHeader().getHeight())
-            throw new BadImageSizeException(Config.get("bis_exception"));
+        // 1 Obrazek jest mniejszy od 2
+        if (file.getHeader().getWidth() < secondFile.getHeader().getWidth() || file.getHeader().getHeight() < secondFile.getHeader().getHeight()) this.file = Convert.converseSize(file, secondFile);
+        // 2 Obrazek jest mniejszy od 1
+        else if (secondFile.getHeader().getWidth() < file.getHeader().getWidth() || secondFile.getHeader().getHeight() < file.getHeader().getHeight()) secondFile = Convert.converseSize(secondFile, file);
 
         return secondFile;
     }
