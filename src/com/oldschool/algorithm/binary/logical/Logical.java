@@ -41,7 +41,6 @@ public abstract class Logical {
                 makeAlgorithm(x, y);
             }
         }
-
     }
 
     public BmpFile getFile() {

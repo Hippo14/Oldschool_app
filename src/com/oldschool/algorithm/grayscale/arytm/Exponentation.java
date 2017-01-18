@@ -16,13 +16,13 @@ public class Exponentation extends Operation {
 
     @Override
     public void makeAlgorithm(int x, int y) {
-        int firstPixel = file.getImage().getRed(x, y);
+        double firstPixel = file.getImage().getRed(x, y);
 
-        firstPixel = (int)Math.pow(firstPixel, constant);
+        firstPixel = Math.pow(firstPixel, constant);
 
-        file.getImage().setRed(x, y, firstPixel);
-        file.getImage().setGreen(x, y, firstPixel);
-        file.getImage().setBlue(x, y, firstPixel);
+        file.getImage().setRed(x, y, (int) (1.0 * firstPixel));
+        file.getImage().setGreen(x, y, (int) (1.0 * firstPixel));
+        file.getImage().setBlue(x, y, (int) (1.0 * firstPixel));
     }
 
 }

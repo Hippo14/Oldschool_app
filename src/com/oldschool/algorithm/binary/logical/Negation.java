@@ -1,12 +1,13 @@
 package com.oldschool.algorithm.binary.logical;
 
+import com.oldschool.algorithm.utils.IAlgorithm;
 import com.oldschool.image.bitmap.BmpFile;
 import com.oldschool.image.bitmap.exception.BadImageTypeException;
 
 /**
  * Created by KMacioszek on 2016-09-05.
  */
-public class Negation extends Logical {
+public class Negation extends Logical implements IAlgorithm {
 
     public Negation(BmpFile file) throws BadImageTypeException {
         super(file);
@@ -20,5 +21,10 @@ public class Negation extends Logical {
             file.getImage().setBit(1, x, y);
         else
             file.getImage().setBit(0, x, y);
+    }
+
+    @Override
+    public void run() {
+
     }
 }

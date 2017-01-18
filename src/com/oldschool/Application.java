@@ -1,11 +1,9 @@
 package com.oldschool;
 
 import com.oldschool.algorithm.binary.logical.*;
-import com.oldschool.algorithm.binary.morphology.*;
 import com.oldschool.algorithm.binary.morphology.Closing;
 import com.oldschool.algorithm.binary.morphology.Dilation;
 import com.oldschool.algorithm.binary.morphology.Erosion;
-import com.oldschool.algorithm.binary.morphology.Morphology;
 import com.oldschool.algorithm.binary.morphology.Opening;
 import com.oldschool.algorithm.filters.*;
 import com.oldschool.algorithm.geomet.Transform;
@@ -21,13 +19,13 @@ import com.oldschool.algorithm.grayscale.arytm.SumConst;
 import com.oldschool.algorithm.grayscale.histogram.Equalization;
 import com.oldschool.algorithm.grayscale.histogram.Histogram;
 import com.oldschool.algorithm.grayscale.histogram.Stretching;
-import com.oldschool.algorithm.grayscale.morphology.*;
 import com.oldschool.algorithm.normalize.Normalize;
 import com.oldschool.algorithm.rgb.histogram.Otsu;
 import com.oldschool.algorithm.rgb.histogram.RGBHistogram;
 import com.oldschool.algorithm.rgb.histogram.Threeshold;
 import com.oldschool.algorithm.utils.Config;
 import com.oldschool.algorithm.utils.Convert;
+import com.oldschool.image.IDecoder;
 import com.oldschool.image.bitmap.BmpFile;
 import com.oldschool.image.bitmap.bits.Constants;
 import com.oldschool.image.bitmap.exception.BadImageSizeException;
@@ -35,15 +33,14 @@ import com.oldschool.image.bitmap.exception.BadImageTypeException;
 import com.oldschool.image.bitmap.exception.UnknownFormatException;
 import com.oldschool.image.bitmap.read.Read;
 import com.oldschool.image.bitmap.write.Write;
-import com.sun.xml.internal.bind.v2.runtime.reflect.opt.Const;
+import com.oldschool.image.smietnik.png.Decoder;
+import com.oldschool.image.smietnik.png.Encoder;
+import com.oldschool.image.virtual.Image;
 
-import javax.annotation.PostConstruct;
+import java.awt.image.BufferedImage;
 import java.io.*;
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.HashMap;
 import java.util.Scanner;
 
 /**
@@ -80,38 +77,45 @@ public class Application {
 
         while (running) {
             try {
-                // Choose option
-                chooseOption();
+                File file = getFileFromPath();
 
-                if (choosen)
-                // Write Bmp file
-                writeBmp("_" + getName());
+                Image image = readPNG(file);
 
-                // Normalize
-                if (choosen && normalize())
-                    // Write Bmp file
-                    writeBmp("_normalize" + "_" + getName());
+                writePNG(image, file);
 
-                if (choosen)
-                    // Stop ?
-                    doYouWantStop();
-                choosen = true;
+
+//                // Choose option
+//                chooseOption();
+//
+//                if (choosen)
+//                // Write Bmp file
+//                writeBmp("_" + getName());
+//
+//                // Normalize
+//                if (choosen && normalize())
+//                    // Write Bmp file
+//                    writeBmp("_normalize" + "_" + getName());
+//
+//                if (choosen)
+//                    // Stop ?
+//                    doYouWantStop();
+//                choosen = true;
             }
-            catch (BadImageSizeException e) {
-                printError(e.getMessage());
-                // Stop ?
-                doYouWantStop();
-            }
-            catch (BadImageTypeException e) {
-                printError(e.getMessage());
-                // Stop ?
-                doYouWantStop();
-            }
-            catch (UnknownFormatException e) {
-                printError(e.getMessage());
-                // Stop ?
-                doYouWantStop();
-            }
+//            catch (BadImageSizeException e) {
+//                printError(e.getMessage());
+//                // Stop ?
+//                doYouWantStop();
+//            }
+//            catch (BadImageTypeException e) {
+//                printError(e.getMessage());
+//                // Stop ?
+//                doYouWantStop();
+//            }
+//            catch (UnknownFormatException e) {
+//                printError(e.getMessage());
+//                // Stop ?
+//                doYouWantStop();
+//            }
             catch (Exception e) {
                 printError(e.getMessage());
                 e.printStackTrace();
@@ -152,6 +156,33 @@ public class Application {
         file = new File(newPath);
         Write write = new Write(this.file, file);
         System.out.println(Config.get("pathToNewFile") + newPath);
+    }
+
+    private void chooseOption2() throws Exception {
+        cls();
+
+        System.out.println("....");
+        System.out.println(Config.get("menu1"));
+        System.out.println(Config.get("menu2"));
+        System.out.println(Config.get("menu3"));
+        System.out.println(Config.get("menu4"));
+        System.out.println(Config.get("menu5"));
+        System.out.println(Config.get("menu6"));
+        System.out.println(Config.get("menu7"));
+        System.out.println(Config.get("menu8"));
+        System.out.println(Config.get("menu9"));
+        System.out.println(Config.get("menu0"));
+        System.out.print(Config.get("menuWybierzOpcje"));
+
+        option = input.nextInt();
+
+        HashMap<String, Object> submenu = Config.menuHashmap.get(option);
+
+        option = input.nextInt();
+
+        Object object = submenu.get(option);
+
+
     }
 
     private void chooseOption() throws Exception {
@@ -732,6 +763,38 @@ public class Application {
 
     private void choose() {
         choosen = false;
+    }
+
+    private Image readPNG(File file) throws IOException {
+        sDir = file.toURI().getPath();
+//        PNGDecoder pngDecoder = new PNGDecoder();
+//        return pngDecoder.decode(sDir);
+//        return com.oldschool.image.smietnik.png.Decoder.decode(sDir);
+
+        IDecoder iDecoder = new com.oldschool.image.png.Decoder(new FileInputStream(sDir));
+        return iDecoder.decode();
+
+//        BufferedImage bufferedImage = ImageIO.read(new FileInputStream(sDir));
+//        return bufferedImage;
+
+//        try {
+//            PNG png = new PNG(new FileInputStream(sDir));
+//            return png.toBufferedImage();
+//        } catch (PNG.PNGException e) {
+//            e.printStackTrace();
+//        }
+//        return null;
+    }
+
+    private void writePNG(Image image, File file) throws IOException {
+        sDir = file.toURI().getPath();
+        try {
+            BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(sDir));
+            com.oldschool.image.png.Encoder encoder = new com.oldschool.image.png.Encoder(out, image);
+            encoder.encode();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     private File getFileFromPath() throws IOException {
